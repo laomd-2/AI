@@ -9,7 +9,7 @@ if __name__ == '__main__':
     #                "shimin judge apple phone expensive gooduse"]
     words, TF, IDF = get_tf_idf(my_doc_list)
 
-    with open("../../result/16337113_laomadong_TFIDF.txt", 'w') as result:
+    with open("16337113_laomadong_TFIDF.txt", 'w') as result:
         for row in TF:
             for i in range(len(IDF)):
                 print("%g" % (row[i] * IDF[i]), end='\t', file=result)
