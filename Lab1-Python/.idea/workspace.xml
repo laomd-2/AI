@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee85a316-b422-456a-ae37-6b3779990cbf" name="Default Changelist" comment="" />
+    <list default="true" id="ee85a316-b422-456a-ae37-6b3779990cbf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/KNN/csv_io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/KNN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/knn_collections.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/classification_dataset/test_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/classification_dataset/train_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/classification_dataset/validation_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/regression_dataset/16351234_Sample_KNN_regression.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/regression_dataset/test_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/regression_dataset/train_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/regression_dataset/validation_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/lab1_data/regression_dataset/validation相关度评估.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KNN/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TFIDF/TFIDF.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TFIDF/lab1_data/semeval.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TFIDF/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TFIDF/mycollections.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TFIDF/myio.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,26 +40,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
-          <entry key="py" value="24" />
+          <entry key="py" value="25" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="24" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="43" />
-          <entry key="py" value="6679" />
+          <entry key="py" value="6702" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="43" />
-          <entry key="Python" value="6679" />
+          <entry key="Python" value="6702" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -49,33 +68,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TFIDF/TFIDF.py">
+        <entry file="file://$PROJECT_DIR$/code/TFIDF/TFIDF.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/KNN/main.py">
+        <entry file="file://$PROJECT_DIR$/code/KNN/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="263">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <marker date="1536946331453" expanded="true" signature="227:228" ph="..." />
-                <marker date="1536946331453" expanded="true" signature="245:671" ph="..." />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1536946869153" expanded="true" signature="145:146" ph="..." />
+                <marker date="1536946869153" expanded="true" signature="158:580" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KNN/KNN.py">
+        <entry file="file://$PROJECT_DIR$/code/KNN/csv_io.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/KNN/KNN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="448">
-              <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <marker date="1536946393508" expanded="true" signature="201:206" ph="..." />
@@ -86,19 +114,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KNN/knn_collections.py">
+        <entry file="file://$PROJECT_DIR$/code/KNN/knn_collections.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TFIDF/mycollections.py">
+        <entry file="file://$PROJECT_DIR$/code/TFIDF/mycollections.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -112,6 +140,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -124,9 +155,11 @@
         <option value="$PROJECT_DIR$/src/TFIDF/TFIDF.py" />
         <option value="$PROJECT_DIR$/src/KNN/mycollections.py" />
         <option value="$PROJECT_DIR$/src/TFIDF/mycollections.py" />
-        <option value="$PROJECT_DIR$/src/KNN/main.py" />
         <option value="$PROJECT_DIR$/src/KNN/knn_collections.py" />
         <option value="$PROJECT_DIR$/src/KNN/KNN.py" />
+        <option value="$PROJECT_DIR$/src/KNN/main.py" />
+        <option value="$PROJECT_DIR$/code/KNN/csv_io.py" />
+        <option value="$PROJECT_DIR$/code/KNN/main.py" />
       </list>
     </option>
   </component>
@@ -136,6 +169,7 @@
     <option name="width" value="821" />
     <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -148,6 +182,17 @@
             <path>
               <item name="Lab1-Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab1-Python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab1-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab1-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab1-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab1-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="KNN" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,6 +339,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
@@ -304,7 +350,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32786885" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32840723" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -318,7 +364,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/TFIDF/myio.py">
+    <entry file="file://$PROJECT_DIR$/code/TFIDF/myio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
@@ -355,7 +401,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDF/lab1_data/semeval.txt">
+    <entry file="file://$PROJECT_DIR$/code/TFIDF/lab1_data/semeval.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-2125055049/math.py">
@@ -382,7 +428,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDF/main.py">
+    <entry file="file://$PROJECT_DIR$/code/TFIDF/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
@@ -392,7 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KNN/lab1_data/classification_dataset/validation_set.csv">
+    <entry file="file://$PROJECT_DIR$/code/KNN/lab1_data/classification_dataset/validation_set.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
@@ -406,31 +452,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDF/TFIDF.py">
+    <entry file="file://$PROJECT_DIR$/code/TFIDF/TFIDF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDF/mycollections.py">
+    <entry file="file://$PROJECT_DIR$/code/TFIDF/mycollections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KNN/knn_collections.py">
+    <entry file="file://$PROJECT_DIR$/code/KNN/knn_collections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KNN/KNN.py">
+    <entry file="file://$PROJECT_DIR$/code/KNN/KNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
-          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <marker date="1536946393508" expanded="true" signature="201:206" ph="..." />
@@ -439,14 +485,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KNN/main.py">
+    <entry file="file://$PROJECT_DIR$/code/KNN/csv_io.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/KNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1536946331453" expanded="true" signature="227:228" ph="..." />
-            <marker date="1536946331453" expanded="true" signature="245:671" ph="..." />
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1536946869153" expanded="true" signature="145:146" ph="..." />
+            <marker date="1536946869153" expanded="true" signature="158:580" ph="..." />
           </folding>
         </state>
       </provider>
