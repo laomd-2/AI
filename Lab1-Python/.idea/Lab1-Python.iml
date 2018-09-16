@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/code/TFIDF" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/TFIDF" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/KNN" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/KNN" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/code/common" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

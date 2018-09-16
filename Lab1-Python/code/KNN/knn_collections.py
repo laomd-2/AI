@@ -14,3 +14,5 @@ class PriorityQueue:
 
     def get(self):
         return heappop(self.queue)
+
+

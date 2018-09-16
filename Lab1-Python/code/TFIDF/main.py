@@ -1,16 +1,20 @@
 from myio import get_tf_idf_documents
-from TFIDF import get_tf_idf
-
+from IDF import IDF
 
 if __name__ == '__main__':
     my_doc_list = get_tf_idf_documents()
     # my_doc_list = ["apple phone gooduse sale",
     #                "shimin buy phone phone",
     #                "shimin judge apple phone expensive gooduse"]
-    words, TF, IDF = get_tf_idf(my_doc_list)
+    idf = IDF(my_doc_list)
+    words = idf.words
 
     with open("16337113_laomadong_TFIDF.txt", 'w') as result:
-        for row in TF:
-            for i in range(len(IDF)):
-                print("%g" % (row[i] * IDF[i]), end='\t', file=result)
+        for document in my_doc_list:
+            tf_idf_doc = idf.get_tf_idf(document)
+            for word in words:
+                tfidf = 0
+                if word in tf_idf_doc:
+                    tfidf = tf_idf_doc[word]
+                print("%g" % tfidf, end='\t', file=result)
             print(file=result)
