@@ -1,4 +1,5 @@
 from heapq import *
+import math
 
 __all__ = ["KNN"]
 
@@ -33,9 +34,11 @@ class KNN:
         k_neighbors = PriorityQueue()
         for other_x, y in self._trained_datas:
             dis = self._distance_policy(test_x, other_x)
+            if math.fabs(dis - self._distance_policy(other_x, other_x)) < 0.000001:
+                return y
             k_neighbors.put((dis, y))
             if len(k_neighbors) > self._k:
                 k_neighbors.get()
         label = self._label_policy(k_neighbors)
-        self.add(test_x, label)
+        # self.add(test_x, label)
         return label

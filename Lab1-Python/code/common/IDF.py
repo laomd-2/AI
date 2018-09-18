@@ -25,7 +25,10 @@ class IDF:
             counter[word] += 1
         total = len(words)
         for word in counter:
-            counter[word] = counter[word] / total * self._idf[word]
+            if word in self._idf:
+                counter[word] = counter[word] / total * self._idf[word]
+            else:
+                counter[word] = 0.000001
         return counter
 
     @property
