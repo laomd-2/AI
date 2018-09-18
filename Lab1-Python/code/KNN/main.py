@@ -1,35 +1,10 @@
-import math, sys
+import math
+import sys
 from KNN import KNN
+from classification.label_policy import classification_label_policy
+from regression.label_policy import regression_label_policy
 from csv_io import read_csv
-from collections import Counter
 from IDF import IDF
-
-
-def classification_label_policy(k_neighbors):
-    label = None
-    cur_max = 0
-    counter = Counter()
-    while k_neighbors:
-        the_label = k_neighbors.get()[1]
-        counter[the_label] += 1
-        if counter[the_label] > cur_max:
-            cur_max = counter[the_label]
-            label = the_label
-    return label
-
-
-def regression_label_policy(k_neighbors):
-    y = [0.0] * 6
-    y_sum = 0
-    while k_neighbors:
-        dis, the_label = k_neighbors.get()
-        for i in range(len(the_label)):
-            tmp = the_label[i] / (-dis + 1 + 0.000001)
-            y[i] += tmp
-            y_sum += tmp
-    for i in range(len(y)):
-        y[i] /= y_sum
-    return tuple(y)
 
 
 def distance(x1, x2):
