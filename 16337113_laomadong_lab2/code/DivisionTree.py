@@ -1,12 +1,13 @@
 from collections import Counter
 
+__all__ = ["DivisionTree"]
+
 
 class TreeNode:
-    def __init__(self, property, condition, label, parent, children):
+    def __init__(self, property, condition, label, children):
         self.property = property
         self.condition = condition
         self.label = label
-        self.parent = parent
         self.children = children
 
 
@@ -35,6 +36,8 @@ class DivisionTree(Tree):
         self.root = self._build_tree(rows, cols, property_select_policy)
 
     def get_col(self, col, rows):
+        if col is None:
+            return None
         return [self._train_datas[row][col] for row in rows]
 
     @staticmethod
@@ -45,7 +48,7 @@ class DivisionTree(Tree):
                 if last != x:
                     return False
             last = x
-        return True
+        return last is not None
 
     def _build_tree(self, rows, cols, property_select_policy):
         # 训练集为空或者属性为空
@@ -53,30 +56,31 @@ class DivisionTree(Tree):
             return None
         y = self.get_col(-1, rows)
         if not cols:
-            return TreeNode(None, None, self.vote(y), None, [])
+            return TreeNode(None, None, self.vote(y), [])
 
-        # print("y=", y)
+        # 所有样本属于同一类
         if self._is_same(y):
-            return TreeNode(None, None, y[0], None, [])
+            return TreeNode(None, None, y[0], [])
 
         properties = [(col, self.get_col(col, rows)) for col in cols]
         best_pro = property_select_policy(properties, y)
-        best_col = self.get_col(best_pro, rows)
-        # print("select", best_pro, best_col)
+        root = TreeNode(best_pro, None, self.vote(y), [])
+
+        if best_pro is None:
+            return root
         cols.remove(best_pro)
 
         branches = dict()
+        best_col = self.get_col(best_pro, rows)
         for x, row in zip(best_col, rows):
             branches.setdefault(x, set())
             branches[x].add(row)
-        root = TreeNode(best_pro, None, self.vote(y), None, [])
+
         for branch, brc_rows in branches.items():
-            # print(branch)
             child = self._build_tree(brc_rows, cols, property_select_policy)
             if child:
                 child.condition = branch
-                child.parent = root
-            root.children.append(child)
+                root.children.append(child)
         return root
 
     def vote(self, vector):
@@ -97,7 +101,7 @@ class DivisionTree(Tree):
             path.append(node.property)
             condition = test_data[node.property]
             for child in node.children:
-                if child and child.condition == condition:
+                if child.condition == condition:
                     node = child
                     break
             else:
