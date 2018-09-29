@@ -1,5 +1,5 @@
 from csv import reader
-from DivisionTree import DivisionTree
+from DecisionTreeClassifier import DecisionTreeClassifier
 from property_select_policy import *
 
 
@@ -20,9 +20,10 @@ def validate(tree, validation_set):
 
 
 if __name__ == '__main__':
-    tree = DivisionTree(list(reader(open("lab2_data/Car_train.csv"))), gini_policy)
-    # tree.pre_order()
+    tree = DecisionTreeClassifier(list(reader(open("lab2_data/Car_train.csv"))), gini_policy)
+    tree.show()
     with open("16337113_laomadong_Car.csv", 'w') as res:
         for x, y in my_reader("lab2_data/Car_test.csv"):
-            print(*x, tree.predict(x)[0], sep=',', file=res)
-
+            label, path = tree.predict(x)
+            print(x, path)
+            print(*x, label, sep=',', file=res)
