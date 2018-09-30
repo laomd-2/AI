@@ -39,14 +39,13 @@ if __name__ == '__main__':
     m = X.shape[0]
     last = int(m * 0.8)
 
-    clf.fit(digitalize(X[last:]),
-            digitalize(y[last:]))
+    clf.fit(X[:last],
+            y[:last])
     # clf.show()
 
-    # validate(clf, digitalize(X[last: m]),
-    #          digitalize(y[last: m]))
-    with open("16337113_laomadong_Car2.csv", 'w') as res:
+    # validate(clf, (X[last: m]),
+    #          (y[last: m]))
+    with open("16337113_laomadong_Car.csv", 'w') as res:
         X = np.asarray(my_reader("lab2_data/Car_test.csv")[0])
-        test_X = digitalize(X)
-        for x, y in zip(X, clf.predict(test_X)):
+        for x, y in zip(X, clf.predict(X)):
             print(*x, y, sep=',', file=res)
