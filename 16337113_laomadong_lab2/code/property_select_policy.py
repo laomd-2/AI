@@ -21,7 +21,7 @@ def info_gain_policy(properties, y):
     max_gain = 0
     best_pro = None
 
-    for col, pro in properties:
+    for col, pro in enumerate(properties):
         branches = dict()
         for x, y_x in zip(pro, y):
             branches.setdefault(x, [])
@@ -41,7 +41,7 @@ def info_gain_rate_policy(properties, y):
     max_gain = 0
     best_pro = None
 
-    for col, pro in properties:
+    for col, pro in enumerate(properties):
         branches = dict()
         for x, y_x in zip(pro, y):
             branches.setdefault(x, [])
@@ -69,11 +69,18 @@ def gini_index(vector):
 
 
 def gini_policy(properties, y):
-    min_gini = 100
+    min_gini = 1000000
     best_pro = None
-    for col, pro in properties:
-        gini_pro = gini_index(pro)
-        if gini_pro < min_gini:
-            min_gini = gini_pro
+    for col, pro in enumerate(properties):
+        branches = dict()
+        for x, y_x in zip(pro, y):
+            branches.setdefault(x, [])
+            branches[x].append(y_x)
+        gini = 0
+        for branch, p in branches.items():
+            gini += len(p) / len(pro) * gini_index(p)
+
+        if gini < min_gini:
+            min_gini = gini
             best_pro = col
     return best_pro

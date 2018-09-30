@@ -1,22 +1,24 @@
 from collections import Counter
 from treelib import Tree
+import numpy as np
+from property_select_policy import *
+
 
 __all__ = ["DecisionTreeClassifier"]
 
 
 class DecisionTreeClassifier(Tree):
 
-    def __init__(self, train_datas, property_select_policy):
+    def __init__(self):
         super(DecisionTreeClassifier, self).__init__()
-        self._train_datas = train_datas
-        rows = set(range(len(train_datas)))
-        cols = set(range(len(train_datas[0]) - 1))
-        self._build_tree(rows, cols, property_select_policy)
+        self._X, self._y = None, None
 
-    def get_col(self, col, rows):
-        if col is None:
-            return None
-        return [self._train_datas[row][col] for row in rows]
+    def fit(self, X, y, property_select_policy=gini_policy):
+        self._X, self._y = np.asarray(X), np.asarray(y).flatten()
+        m, n = self._X.shape
+        rows = list(range(m))
+        cols = list(range(n))
+        self._build_tree(rows, cols, property_select_policy)
 
     @staticmethod
     def _is_same(iterable):
@@ -30,33 +32,35 @@ class DecisionTreeClassifier(Tree):
 
     def _build_tree(self, rows, cols, property_select_policy, parent=None, branch="root"):
         # 训练集为空或者属性为空
+        # print(rows)
         if rows:
-            y = self.get_col(-1, rows)
+            y = self._y.take(rows, 0)
+            # print(y)
             if cols:
                 # 所有样本属于同一类
                 if self._is_same(y):
                     self.create_node(tag=(branch, None, y[0]), parent=parent)
                 else:
-                    properties = [(col, self.get_col(col, rows)) for col in cols]
-                    best_pro = property_select_policy(properties, y)
-                    cols.remove(best_pro)
+                    properties = self._X.take(rows, 0).take(cols, 1).T
+                    tmp = property_select_policy(properties, y)
+                    best_pro = cols[tmp]
+                    best_col = properties[tmp]
+                    # cols.pop(tmp)
 
-                    self.create_node(tag=(branch, best_pro, self.vote(y)),
-                                     identifier=best_pro,
-                                     parent=parent)
+                    root = self.create_node(tag=(branch, best_pro, self._vote(y)),
+                                            parent=parent)
 
                     branches = dict()
-                    best_col = self.get_col(best_pro, rows)
                     for x, row in zip(best_col, rows):
-                        branches.setdefault(x, set())
-                        branches[x].add(row)
+                        branches.setdefault(x, [])
+                        branches[x].append(row)
 
                     for branch, brc_rows in branches.items():
-                        self._build_tree(brc_rows, cols, property_select_policy, best_pro, branch)
+                        self._build_tree(brc_rows, cols, property_select_policy, root.identifier, branch)
             else:
-                self.create_node(tag=(branch, None, self.vote(y)), parent=parent)
+                self.create_node(tag=(branch, None, self._vote(y)), parent=parent)
 
-    def vote(self, vector):
+    def _vote(self, vector):
         count = Counter()
         max_num = 0
         res = None
@@ -67,19 +71,27 @@ class DecisionTreeClassifier(Tree):
                 res = x
         return res
 
-    def predict(self, test_data):
-        pro = self.root
-        node = None
-        path = []
-        while pro:
-            node = self.get_node(pro)
-            path.append(pro)
+    def predict(self, X):
+        tmp = []
+        cnt = 0
+        for x in X:
+            label, is_leaf = self._predict(x, self.root)
+            tmp.append(label)
+            cnt += not is_leaf
+        print(cnt)
+        return np.asarray(tmp)
+
+    def _predict(self, test_data, node_id):
+        while True:
+            node = self.get_node(node_id)
+            pro = node.tag[1]
+            if pro is None:
+                break
             condition = test_data[pro]
-            for child in self.children(pro):
+            for child in self.children(node_id):
                 if child.tag[0] == condition:
-                    pro = child.tag[1]
-                    node = child
+                    node_id = child.identifier
                     break
             else:
                 break
-        return node.tag[2], path
+        return node.tag[2], node.is_leaf()
