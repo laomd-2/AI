@@ -149,6 +149,14 @@ INPUT d:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+INPUT d:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+INPUT d:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+INPUT d:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 INPUT build/16337113_laomadong_lab2.aux
 INPUT build/16337113_laomadong_lab2.aux
 OUTPUT build/16337113_laomadong_lab2.aux
@@ -180,4 +188,7 @@ INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 OUTPUT build/16337113_laomadong_lab2.xdv
+INPUT p4.PNG
+INPUT p5.PNG
+INPUT p6.PNG
 INPUT build/16337113_laomadong_lab2.aux
