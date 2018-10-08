@@ -1,11 +1,11 @@
 # Fdb version 3
-["xdvipdfmx"] 1538746066 "build/16337113_laomadong_lab2.xdv" "build/16337113_laomadong_lab2.pdf" "build/16337113_laomadong_lab2" 1538746067
-  "build/16337113_laomadong_lab2.xdv" 1538746066 41788 615d9da48f6a7a0baa6909eb6608c308 "xelatex"
+["xdvipdfmx"] 1539009332 "build/16337113_laomadong_lab2.xdv" "build/16337113_laomadong_lab2.pdf" "build/16337113_laomadong_lab2" 1539009333
+  "build/16337113_laomadong_lab2.xdv" 1539009331 45024 cc2ebd3875e98e6a763d4e48366c90fd "xelatex"
   (generated)
   "build/16337113_laomadong_lab2.pdf"
-["xelatex"] 1538746063 "16337113_laomadong_lab2.tex" "build/16337113_laomadong_lab2.xdv" "16337113_laomadong_lab2" 1538746067
-  "16337113_laomadong_lab2.tex" 1538746060 11051 5dd2a74ee89075adf7458798fe5edeaa ""
-  "build/16337113_laomadong_lab2.aux" 1538746066 1269 68d5c3bee4e5bee7f5fd059b07cb4bdc ""
+["xelatex"] 1539009329 "16337113_laomadong_lab2.tex" "build/16337113_laomadong_lab2.xdv" "16337113_laomadong_lab2" 1539009333
+  "16337113_laomadong_lab2.tex" 1539009328 11727 8498f28bb34513febb534744be61e229 ""
+  "build/16337113_laomadong_lab2.aux" 1539009331 1345 913362376f0d9f09a92286e22fc2e6a9 ""
   "c:/Windows/Fonts/msyh.ttc" 1523489648 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "d:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1537102501 3332 103109f5612ad95229751940c61aada0 ""
   "d:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1537102136 1004 54797486969f23fa377b128694d548df ""
@@ -104,7 +104,7 @@
   "p6.PNG" 1538666092 11202 db4e60d9c21d4221817fef097d139994 ""
   "p6.png" 1538666092 11202 db4e60d9c21d4221817fef097d139994 ""
   (generated)
+  "build/16337113_laomadong_lab2.xdv"
   "build/16337113_laomadong_lab2.aux"
   "build/16337113_laomadong_lab2.out"
-  "build/16337113_laomadong_lab2.xdv"
   "build/16337113_laomadong_lab2.log"

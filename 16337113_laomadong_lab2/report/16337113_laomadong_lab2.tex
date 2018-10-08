@@ -175,8 +175,8 @@
                 \EndFor
                 \State $root.feature \gets F_{best}$
                 \State // 根据所选属性划分数据集
-                \For {each $(F_{ji},X_i,y_i) \in divide(F_{best},X,y)$}
-                  \State $sub\_tree = build\_tree(X_i, y_i, root, F_{ji})$ // 递归建树
+                \For {each $(branch,X_i,y_i) \in divide(F_{best},X,y)$}
+                  \State $sub\_tree = build\_tree(X_i, y_i, root, branch)$ // 递归建树
                   \State $root.add\_child(sub\_tree)$
                 \EndFor
                 \EndIf
@@ -218,6 +218,14 @@
   \end{figure}
 \end{enumerate}
 
+\section{优化\&创新}
+\begin{enumerate}[itemindent=0.5em,label=\arabic*、]
+  \item 数据集划分优化\\
+  数据集的划分涉及到许多次拷贝，例如，要将$m \times n$的X分成$[0, a)$、$[a, b)$、$[b, m)$
+  的三部分，若采用简单的划分方式，即返回$X[0:a]$、$X[a:b]$、$X[b:n]$，将会出现非常多的拷贝，
+  时间复杂度为$(O(m \times n))$, 尤其是当n较大时，拷贝将会成为瓶颈。其实，只需要记录当前子树
+  的数据集对应的行和列的集合，在划分时对行或列的集合进行划分而不是对数据集本身划分，就能将时间复杂度降低为$O(m + n)$。
+\end{enumerate}
 \section{实验结果及分析}
 \subsection{实验结果展示示例}
 \subsection{评测指标展示及分析}

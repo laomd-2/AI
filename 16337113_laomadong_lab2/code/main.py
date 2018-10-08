@@ -1,6 +1,4 @@
 from tree import *
-import sys
-sys.path.append('D:\learning\AI\experiment')
 from utils import *
 
 
