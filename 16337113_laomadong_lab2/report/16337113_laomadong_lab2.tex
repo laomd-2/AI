@@ -216,30 +216,12 @@
   则进入分支继续重复该过程，否则返回结点的类标签。
   \begin{figure}[h]
   \begin{center}
-  \includegraphics[width=0.8\textwidth]{p6.png} % Include the image placeholder.png
+  \includegraphics[width=0.6\textwidth]{p6.png} % Include the image placeholder.png
   \caption{预测}
   \end{center}
   \end{figure}
 \end{enumerate}
 
-\section{优化\&创新}
-\begin{enumerate}[itemindent=0.5em,label=\arabic*、]
-  \item 数据集划分优化
-  \par \qquad 数据集的划分涉及到许多次拷贝，例如，要将$m \times n$的X分成$[0, a)$、$[a, b)$、$[b, m)$
-  的三部分，若采用简单的划分方式，即返回$X[0:a]$、$X[a:b]$、$X[b:n]$，将会出现非常多的拷贝，
-  时间复杂度为$(O(m \times n))$, 尤其是当n较大时，拷贝将会成为瓶颈。同理，选择了最优属性之后将其对应的列从
-  矩阵中删除也会引起很多拷贝。
-  \par \qquad 其实，只需要记录当前子树对应的行的集合，以此表示子数据集；记录对应的列的集合，以此表示可用属性。
-  在划分时对行的集合进行划分而不是对数据集本身划分，就能将时间复杂度降低为$O(m\log m + n\log n)$。
-
-  \begin{figure}[h]
-  \begin{center}
-  \includegraphics[width=0.6\textwidth]{p7.png}
-  \caption{按属性划分优化}
-  \end{center}
-  \end{figure}
-
-\end{enumerate}
 \section{实验结果及分析}
 \subsection{实验结果展示示例}
 \begin{enumerate}[itemindent=0.5em,label=\arabic*、]
@@ -247,17 +229,19 @@
   挑选实验数据前20行作为训练集，21-25行作为测试集。
   \begin{figure}[h]
   \begin{center}
-  \includegraphics[width=0.6\textwidth]{p8.png}
+  \includegraphics[width=0.45\textwidth]{p8.png}
   \caption{训练集}
   \end{center}
   \end{figure}
 
   \begin{figure}[h]
   \begin{center}
-  \includegraphics[width=0.6\textwidth]{p9.png}
+  \includegraphics[width=0.45\textwidth]{p9.png}
   \caption{测试集}
   \end{center}
   \end{figure}
+
+\newpage
   \item 建树过程\\
   以CART树为例，第一次递归根节点有全部数据集，各个属性计算得到的基尼系数为$0:0.219, 1:0.2, 2:0.203, 3:0.12, 4:0.23, 5:0.225$，
   其中最小的是属性3，因此选择属性3作为划分标准。属性3有三种取值：取值为2的有第6, 9, 10, 11, 12, 14, 15, 17行，y值全部为0；
@@ -330,12 +314,49 @@
 \subsection{评测指标展示及分析}
 \begin{enumerate}[itemindent=0.5em,label=\arabic*、]
   \item 准确率
-  \item 优化前后训练时间对比
+  \par \qquad 采用5折交叉验证，数据集80\%作为训练集，20\%作为验证集，分别评测ID3、C4.5和CART在5次数据集划分的准确率
+  ，最后求平均准确率，如下表。
+  \par \qquad 三种模型的准确率都达到了95\%，其中ID3和CART准确率相近（表中一样是已经四舍五入之后的结果），C4.5
+  效果最好，平均准确率在95.3\%。
+  \begin{center}
+    \begin{tabular}{c|c|c}
+    \hline
+    模型 & 5折交叉验证准确率 & 平均准确率\\
+    \hline
+    ID3 & 92.6\% \vline \ 96.9\% \vline \ 95.7\% \vline \ 95.0\% \vline \ 95.4\% & 95.1\%\\
+    \hline
+    C4.5 & 95.1\% \vline \ 96.6\% \vline \ 95.7\% \vline \ 94.7\% \vline \ 94.4\% & 95.3\%\\
+    \hline
+    CART & 92.6\% \vline \ 96.9\%  \vline \ 95.7\%  \vline \ 95.0\%  \vline \ 95.4\% & 95.1\%\\
+    \hline
+    \end{tabular}
+  \end{center}
 \end{enumerate}
 \section{思考题}
 \begin{itemize}
   \item 决策树有哪些避免过拟合的方法？
-  \item C4.5相比于ID3的优点是什么，C4.5又可能有什么缺点？
+  \par \qquad 导致过拟合的原因主要有两种：建模时没有对决策树的生长进行限制，导致其完美拟合训练数据，但是在测试数据上表现较差;
+  样本数据含有噪声或样本缺乏代表性，模型错误地理解了输入输出之间的关系。对应的方法有两种：
+  \begin{enumerate}[itemindent=0.5em,label=(\arabic*)]
+    \item 剪枝：对于当前节点，在选择了某个属性后，如果它提高在验证集上的准确率就继续划分，否则
+    将当前节点作为叶节点返回（预剪枝）；决策树建好后，自底向上考虑非叶节点，如果将其变成叶子节点能提高在验证集的准确率
+    就把它变成叶子节点。
+    \item 用多棵决策树的综合结果作为预测结果。在GBDT模型中，采用很多棵树来学习训练集，而且每棵树的学习结果只作为
+    全局学习结果的一小部分。
+  \end{enumerate}
+  \item C4.5相比于ID3的优点是什么，C4.5又可能有什么缺点？\\
+  优点：
+  \begin{enumerate}
+    \item 用信息增益率来选择属性，克服ID3选择属性时偏向选择取值多的属性的不足；
+    \item 既可以处理离散型属性，也可以处理连续性属性。
+  \end{enumerate}
+  缺点：
+  \begin{enumerate}
+    \item 在建树过程中需要计算属性的熵，算法效率降低；
+    \item 只适合于处理能全部驻留在内存中的训练集，当训练集很大无法存下时，程序无法运行。
+  \end{enumerate}
   \item 如何用决策树来进行特征选择（判断的重要性）？
+  \par \qquad 对于一个数据集，可以先用决策树模型取训练，找出准确率最高时对应的决策树。决策树的每个内部节点都包含一个特征，给每个
+  内部节点的特征赋予一个权重，根节点最大，越往下权重越小，不在决策树中的属性权重最小。如此就能选出数据集中的重要特征。
 \end{itemize}
 \end{document}

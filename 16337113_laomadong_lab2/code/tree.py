@@ -1,6 +1,7 @@
 from treelib import Tree
-import numpy as np
 from collections import Counter
+from utils import *
+import numpy as np
 import math
 
 __all__ = ["entropy", "gini_index", "DecisionTreeClassifier"]
@@ -45,21 +46,15 @@ class DecisionTreeClassifier(Tree):
         cols = list(range(n))
         self._build_tree(rows, cols, self.root, "root")
 
-    @staticmethod
-    def _is_same(iterable):
-        last = None
-        for x in iterable:
-            if last is not None:
-                if last != x:
-                    return False
-            last = x
-        return last is not None
+    def get_params(self, deep=False):
+        return {"property_select_policy": self._M,
+                "punish": self._punish}
 
     def _build_tree(self, rows, cols, parent, branch):
         if rows:
-            y = self._y.take(rows, 0)
+            y = self._y[rows]
             if cols:
-                if self._is_same(y):  # 所有样本属于同一类
+                if is_same(y):  # 所有样本属于同一类
                     self.create_node(tag=(branch, None, y[0]),
                                      parent=parent)
                 else:
@@ -69,13 +64,13 @@ class DecisionTreeClassifier(Tree):
                     for col in cols:
                         score_j = 0
                         # 根据特征划分数据集并计算得分（频率*指标得分的和）
-                        for sub_rows in self._divide(col, rows).values():
+                        for sub_rows in divide_on_discrete_feature(self._X, col, rows).values():
                             score_j += len(sub_rows) / len(rows) \
-                                       * self._M(self._y.take(sub_rows, 0))
+                                       * self._M(self._y[sub_rows])
                         score_j = score_y - score_j
                         # 处理有惩罚的指标，如信息增益率
                         if self._punish:
-                            feature = self._X[:, col].take(rows, 0)
+                            feature = self._X[rows, col]
                             score_j /= self._M(feature)
                         # 找出得分最高的属性
                         if score_best is None or score_j > score_best:
@@ -86,12 +81,12 @@ class DecisionTreeClassifier(Tree):
                     # 根据所选属性创建新内部节点，其label根据多数投票原则得到
                     root = self.create_node(tag=(branch,
                                                  feature_best,
-                                                 self._vote(y)),
+                                                 mode(y)),
                                             parent=parent)
-                    for branch, sub_rows in self._divide(feature_best, rows).items():
+                    for branch, sub_rows in divide_on_discrete_feature(self._X, feature_best, rows).items():
                         self._build_tree(sub_rows, cols[:], root, branch)
             else:  # 属性为空，多数投票的label作为叶节点label
-                self.create_node(tag=(branch, None, self._vote(y)),
+                self.create_node(tag=(branch, None, mode(y)),
                                  parent=parent)
         else:  # 训练集为空，父节点label作为叶节点的label
             label = None
@@ -99,25 +94,6 @@ class DecisionTreeClassifier(Tree):
                 label = parent.tag[2]
             self.create_node(tag=(branch, None, label),
                              parent=parent)
-
-    def _divide(self, feature, rows):
-        res = dict()
-        for row in rows:
-            branch = self._X[row, feature]
-            res.setdefault(branch, [])
-            res[branch].append(row)
-        return res
-    
-    def _vote(self, vector):
-        count = Counter()
-        max_num = 0
-        res = None
-        for x in vector:
-            count[x] += 1
-            if count[x] > max_num:
-                max_num = count[x]
-                res = x
-        return res
 
     def predict(self, X):
         tmp = []
