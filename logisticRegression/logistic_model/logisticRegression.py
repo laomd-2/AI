@@ -13,10 +13,12 @@ class LogisticRegression:
         return np.column_stack((np.ones(M.shape[0]), M))
 
     def predict(self, X):
-        X = self.argmented(X)
-        prob = sigmoid(X.dot(self.W.T))
+        prob = self.predict_prob(X)
         return np.asarray([1 if p > 0.5 else 0 for p in prob])
-
+    
+    def predict_prob(self, X):
+        X = self.argmented(X)
+        return sigmoid(X.dot(self.W.T))
 
 class SimpleLogisticRegression(LogisticRegression):
     
@@ -39,4 +41,3 @@ class RegularizedLogisticRegression(LogisticRegression):
         result = opt.fmin_tnc(func=regularized_cross_entropy, x0=W, 
                               fprime=regularized_gradient_ce, args=(X, y, self.__learning_rate))
         self.W = result[0]
-    
