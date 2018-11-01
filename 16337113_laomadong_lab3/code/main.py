@@ -19,15 +19,8 @@ if __name__ == '__main__':
     path = search_policy(maze, start, end, '%')
     print(len(path))
 
+    directions = 'lrdu'
     for i in range(len(path) - 1):
         p, next_p = path[i], path[i + 1]
-        if p[0] == next_p[0]:
-            char = 'l'
-            if p[1] < next_p[1]:
-                char = 'r'
-        elif p[0] < next_p[0]:
-            char = 'd'
-        else:
-            char = 'u'
-        maze[p] = char
+        maze[p] = directions[int(p[0] < next_p[0]) * 2 + int(p[1] < next_p[1])]
     np.savetxt('../data/path-' + search_policy.__name__ + '.txt', maze, '%s', delimiter='')
