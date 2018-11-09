@@ -11,6 +11,10 @@
 #include <cmath>
 using namespace std;
 
+#ifndef __int64
+#define __int64 long long
+#endif
+
 class Puzzle {
     __int64 _puzzle;
 #define BITWISE 4
