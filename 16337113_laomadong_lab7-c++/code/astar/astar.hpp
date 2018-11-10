@@ -13,15 +13,10 @@ using namespace std;
 #define can_visit(visited, node) (visited.find(node.puzzle) == visited.end() \
     || visited[node.puzzle] > node.cost)
 
-template <typename Heuristic>
-int astar_search(const Puzzle& start, vector<int>& path) {
-    typedef AstarNode<Heuristic> node_type;
-    Puzzle target = start;
-    for (int i = 0; i < target.dim_size; ++i) {
-        for (int j = 0; j < target.dim_size; ++j) {
-            target.set(i, j, (i * target.dim_size + j + 1) % (target.dim_size * target.dim_size));
-        }
-    }
+template <typename Heuristic, int numbers>
+int astar_search(const Puzzle<numbers>& start, vector<int>& path) {
+    typedef Puzzle<numbers> Puzzle;
+    typedef AstarNode<Heuristic, numbers> node_type;
 
     auto pred = [](node_type* a, node_type* b) {
         return a->cost + a->estimate_cost >= b->cost + b->estimate_cost;
@@ -38,7 +33,7 @@ int astar_search(const Puzzle& start, vector<int>& path) {
         queue1.pop();
         if (can_visit(visited, (*node))) {
             path_parent[node] = node->from;
-            if (node->puzzle == target) {
+            if (node->puzzle == node->puzzle.goal) {
                 target_node = node;
                 break;
             }

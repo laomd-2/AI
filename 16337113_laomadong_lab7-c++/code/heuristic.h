@@ -10,13 +10,13 @@
 
 class Manhattan {
     int distance(int x, int i, int j, int dim_size) {
-        int target_i, target_j;
+        int goal_i, goal_j;
         int d = 0;
         if (x != 0) {
             x -= 1;
-            target_i = x / dim_size;
-            target_j = x % dim_size;
-            d = abs(i - target_i) + abs(j - target_j);
+            goal_i = x / dim_size;
+            goal_j = x % dim_size;
+            d = abs(i - goal_i) + abs(j - goal_j);
         }
         return d;
     }
@@ -27,7 +27,9 @@ public:
         sum += distance(x, space_i, space_j, size);
         return sum;
     }
-    int operator()(const Puzzle& puzzle) {
+
+    template <int numbers>
+    int operator()(const Puzzle<numbers>& puzzle) {
         int x;
         int d = 0;
         for (int i = 0; i < puzzle.dim_size; ++i) {

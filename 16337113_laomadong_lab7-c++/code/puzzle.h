@@ -15,14 +15,16 @@ using namespace std;
 #define __int64 long long
 #endif
 
+template <int numbers>
 class Puzzle {
     __int64 _puzzle;
 #define BITWISE 4
 #define LOWERBIT 15
 public:
+    static Puzzle goal;
     int dim_size = 4;
 
-    Puzzle(int numbers) : dim_size(sqrt(numbers + 1) + 0.5), _puzzle(0) { }
+    explicit Puzzle(__int64 puzzle = 0) : dim_size(sqrt(numbers + 1) + 0.5), _puzzle(puzzle) { }
 
     int get(int i, int j) const {
         i = (i * dim_size + j) * BITWISE;
@@ -67,4 +69,9 @@ public:
     }
 };
 
+template <>
+Puzzle<15> Puzzle<15>::goal(0xFEDCBA987654321ULL);
+
+template <>
+Puzzle<8> Puzzle<8>::goal(0x087654321);
 #endif //INC_16337113_LAOMADONG_LAB7_C_PUZZLE_H

@@ -9,19 +9,19 @@
 #include "heuristic.h"
 using namespace std;
 
-template <typename Heuristic>
+template <typename Heuristic, int numbers>
 class AstarNode {
     int space_i, space_j;
     static int count;
     static Heuristic heuristic;
 public:
-    Puzzle puzzle;
+    Puzzle<numbers> puzzle;
     int cost;
     int estimate_cost;
     int exchange = 0;
     const AstarNode* from;
 
-    explicit AstarNode(const Puzzle& puzzle1) : puzzle(puzzle1), from(nullptr) {
+    explicit AstarNode(const Puzzle<numbers>& puzzle1) : puzzle(puzzle1), from(nullptr) {
         cost = 0;
         estimate_cost = heuristic(puzzle);
         for (int i = 0; i < puzzle.dim_size; ++i) {
@@ -37,7 +37,8 @@ public:
         count++;
     }
 
-    void swap(int i, int j) {
+    AstarNode(const AstarNode* other, int i, int j) : AstarNode(*other) {
+        from = other;
         exchange = puzzle.get(i, j);
         puzzle.set(space_i, space_j, exchange);
         puzzle.set(i, j, 0);
@@ -62,9 +63,7 @@ public:
             n_i = space_i + i;
             n_j = space_j + j;
             if (n_i >= 0 && n_j >= 0 && n_i < puzzle.dim_size && n_j < puzzle.dim_size) {
-                auto *n = new AstarNode(*this);
-                n->from = this;
-                n->swap(n_i, n_j);
+                auto *n = new AstarNode(this, n_i, n_j);
                 neighbor.emplace_back(n);
             }
         }
@@ -76,9 +75,9 @@ public:
     }
 };
 
-template <typename T>
-int AstarNode<T>::count = 0;
+template <typename T, int numbers>
+int AstarNode<T, numbers>::count = 0;
 
-template <typename T>
-T AstarNode<T>::heuristic;
+template <typename T, int numbers>
+T AstarNode<T, numbers>::heuristic;
 #endif //INC_16337113_LAOMADONG_LAB7_C_SEARCH_H
