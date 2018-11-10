@@ -12,7 +12,7 @@ int main(int argc, const char* argv[])
     vector<int> path;
 
     time_t start_time = time(NULL);
-    int node_gen = astar_search(puzzle, path);
+    int node_gen = astar_search<Manhattan>(puzzle, path);
     time_t end_time = time(NULL);
 
     cout << puzzle;

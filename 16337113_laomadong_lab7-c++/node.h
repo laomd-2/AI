@@ -42,8 +42,7 @@ public:
         puzzle.set(space_i, space_j, exchange);
         puzzle.set(i, j, 0);
 
-        estimate_cost -= distance(exchange, i, j, puzzle.dim_size);
-        estimate_cost += distance(exchange, space_i, space_j, puzzle.dim_size);
+        estimate_cost += heuristic(exchange, i, j, space_i, space_j, puzzle.dim_size);
         space_i = i;
         space_j = j;
         cost++;

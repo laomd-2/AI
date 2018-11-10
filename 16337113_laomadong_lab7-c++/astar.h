@@ -13,8 +13,9 @@ using namespace std;
 #define can_visit(visited, node) (visited.find(node.puzzle) == visited.end() \
     || visited[node.puzzle] > node.cost)
 
+template <typename Heuristic>
 int astar_search(const Puzzle& start, vector<int>& path) {
-    typedef AstarNode<Manhattan> node_type;
+    typedef AstarNode<Heuristic> node_type;
     Puzzle target = start;
     for (int i = 0; i < target.dim_size; ++i) {
         for (int j = 0; j < target.dim_size; ++j) {

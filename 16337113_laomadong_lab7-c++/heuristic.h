@@ -8,20 +8,25 @@
 #include <cmath>
 #include "puzzle.h"
 
-int distance(int x, int i, int j, int dim_size) {
-    int target_i, target_j;
-    int d = 0;
-    if (x != 0) {
-        x -= 1;
-        target_i = x / dim_size;
-        target_j = x % dim_size;
-        d = abs(i - target_i) + abs(j - target_j);
-    }
-    return d;
-}
-
 class Manhattan {
+    int distance(int x, int i, int j, int dim_size) {
+        int target_i, target_j;
+        int d = 0;
+        if (x != 0) {
+            x -= 1;
+            target_i = x / dim_size;
+            target_j = x % dim_size;
+            d = abs(i - target_i) + abs(j - target_j);
+        }
+        return d;
+    }
 public:
+    int operator()(int x, int i, int j, int space_i, int space_j, int size) {
+        int sum = 0;
+        sum -= distance(x, i, j, size);
+        sum += distance(x, space_i, space_j, size);
+        return sum;
+    }
     int operator()(const Puzzle& puzzle) {
         int x;
         int d = 0;
