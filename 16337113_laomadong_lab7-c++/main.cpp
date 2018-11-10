@@ -1,8 +1,7 @@
 #include <ctime>
 #include <iostream>
 #include <fstream>
-#include "puzzle.h"
-#include "search.h"
+#include "astar.h"
 using namespace std;
 
 int main(int argc, const char* argv[])
