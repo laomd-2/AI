@@ -1,7 +1,7 @@
 #include <ctime>
 #include <iostream>
 #include <fstream>
-#include "astar.h"
+#include "astar.hpp"
 using namespace std;
 
 int main(int argc, const char* argv[])

@@ -7,7 +7,7 @@
 
 #include <queue>
 #include <map>
-#include "../node.h"
+#include "../node.hpp"
 using namespace std;
 
 #define can_visit(visited, node) (visited.find(node.puzzle) == visited.end() \
