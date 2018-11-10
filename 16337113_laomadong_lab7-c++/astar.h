@@ -7,7 +7,7 @@
 
 #include <queue>
 #include <map>
-#include "search.h"
+#include "node.h"
 using namespace std;
 
 #define can_visit(visited, node) (visited.find(node.puzzle) == visited.end() \
@@ -29,7 +29,6 @@ int astar_search(const Puzzle& start, vector<int>& path) {
     const AstarNode* target_node = nullptr;
     queue1.push(start_node);
 
-    int cnt = 1;
     map<Puzzle, int> visited;
     map<const AstarNode*, const AstarNode*> path_parent;
     while (!queue1.empty()) {
@@ -43,10 +42,8 @@ int astar_search(const Puzzle& start, vector<int>& path) {
             }
             visited[node->puzzle] = node->cost;
             for (auto& n: node->neighbors()) {
-                if (can_visit(visited, (*n))) {
+                if (can_visit(visited, (*n)))
                     queue1.push(n);
-                    cnt++;
-                }
             }
         }
     }
@@ -55,7 +52,7 @@ int astar_search(const Puzzle& start, vector<int>& path) {
         path.push_back(target_node->exchange);
         target_node = path_parent[target_node];
     }
-    return cnt;
+    return AstarNode::nodes_gen();
 }
 
 #endif //INC_16337113_LAOMADONG_LAB7_C_ASTAR_H
