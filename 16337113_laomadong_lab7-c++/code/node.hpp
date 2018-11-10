@@ -24,8 +24,8 @@ public:
     explicit AstarNode(const Puzzle<numbers>& puzzle1) : puzzle(puzzle1), from(nullptr) {
         cost = 0;
         estimate_cost = heuristic(puzzle);
-        for (int i = 0; i < puzzle.dim_size; ++i) {
-            for (int j = 0; j < puzzle.dim_size; ++j) {
+        for (int i = 0; i < puzzle.size(); ++i) {
+            for (int j = 0; j < puzzle.size(); ++j) {
                 if (puzzle.get(i, j) == 0) {
                     space_i = i;
                     space_j = j;
@@ -43,7 +43,7 @@ public:
         puzzle.set(space_i, space_j, exchange);
         puzzle.set(i, j, 0);
 
-        estimate_cost += heuristic(exchange, i, j, space_i, space_j, puzzle.dim_size);
+        estimate_cost += heuristic(exchange, i, j, space_i, space_j, puzzle.size());
         space_i = i;
         space_j = j;
         cost++;
@@ -62,7 +62,7 @@ public:
             j = dy[x];
             n_i = space_i + i;
             n_j = space_j + j;
-            if (n_i >= 0 && n_j >= 0 && n_i < puzzle.dim_size && n_j < puzzle.dim_size) {
+            if (n_i >= 0 && n_j >= 0 && n_i < puzzle.size() && n_j < puzzle.size()) {
                 auto *n = new AstarNode(this, n_i, n_j);
                 neighbor.emplace_back(n);
             }

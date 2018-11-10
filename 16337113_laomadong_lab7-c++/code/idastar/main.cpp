@@ -6,9 +6,8 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    const char* numbers = argv[1];
-    Puzzle<numbers> puzzle;
-    fstream fin(argv[2]);
+    Puzzle<8> puzzle;
+    fstream fin(argv[1]);
     fin >> puzzle;
     vector<int> path;
 

@@ -32,10 +32,11 @@ public:
     int operator()(const Puzzle<numbers>& puzzle) {
         int x;
         int d = 0;
-        for (int i = 0; i < puzzle.dim_size; ++i) {
-            for (int j = 0; j < puzzle.dim_size; ++j) {
+        int dim_size = puzzle.size();
+        for (int i = 0; i < dim_size; ++i) {
+            for (int j = 0; j < dim_size; ++j) {
                 x = puzzle.get(i, j);
-                d += distance(x, i, j, puzzle.dim_size);
+                d += distance(x, i, j, dim_size);
             }
         }
         return d;

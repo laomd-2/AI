@@ -20,9 +20,9 @@ class Puzzle {
     __int64 _puzzle;
 #define BITWISE 4
 #define LOWERBIT 15
+    int dim_size;
 public:
     static Puzzle goal;
-    int dim_size = 4;
 
     explicit Puzzle(__int64 puzzle = 0) : dim_size(sqrt(numbers + 1) + 0.5), _puzzle(puzzle) { }
 
@@ -37,6 +37,10 @@ public:
         _puzzle &= ~(x64 << offset);
         x64 = x;
         _puzzle |= (x64 << offset);
+    }
+
+    int size() const {
+        return dim_size;
     }
 
     bool operator<(const Puzzle& other) const {
