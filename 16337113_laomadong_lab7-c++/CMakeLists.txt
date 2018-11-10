@@ -3,4 +3,4 @@ project(16337113_laomadong_lab7_c__)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(astar main.cpp)
+add_executable(astar code/astar/main.cpp)
