@@ -1,23 +1,24 @@
 #include <ctime>
 #include <iostream>
 #include <fstream>
+#include "../heuristic.h"
 #include "idastar.hpp"
 using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Puzzle<8> puzzle;
+    Puzzle<15> puzzle;
     fstream fin(argv[1]);
     fin >> puzzle;
+    cout << puzzle;
+
     vector<int> path;
 
     time_t start_time = time(NULL);
-    int node_gen = idastar_search<Manhattan>(puzzle, path);
+    idastar_search<Manhattan>(puzzle, path);
     time_t end_time = time(NULL);
 
-    cout << puzzle;
     cout << "Time Used: " << end_time - start_time << " sec" << endl;
-    cout << "Number of nodes generated: " << node_gen << endl;
     cout << "An optional solution " << path.size() << " moves" << endl;
     for (auto it = path.rbegin(); it != path.rend(); ++it) {
         cout << *it << ' ';

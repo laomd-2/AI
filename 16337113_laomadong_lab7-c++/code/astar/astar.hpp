@@ -7,11 +7,9 @@
 
 #include <queue>
 #include <map>
-#include "../node.hpp"
+#include <algorithm>
+#include "node.hpp"
 using namespace std;
-
-#define can_visit(visited, node) (visited.find(node.puzzle) == visited.end() \
-    || visited[node.puzzle] > node.cost)
 
 template <typename Heuristic, int numbers>
 int astar_search(const Puzzle<numbers>& start, vector<int>& path) {
@@ -28,19 +26,31 @@ int astar_search(const Puzzle<numbers>& start, vector<int>& path) {
 
     map<Puzzle, int> visited;
     map<const node_type*, const node_type*> path_parent;
+    pair<int, int> neighbors[4];
+
+    int dy[] = {0, 0, 1, -1};
+    int dx[] = {-1, 1, 0, 0};
     while (!queue1.empty()) {
         node_type* node = queue1.top();
         queue1.pop();
-        if (can_visit(visited, (*node))) {
+        if (can_visit(visited, node->puzzle, node->cost)) {
             path_parent[node] = node->from;
             if (node->puzzle == node->puzzle.goal) {
                 target_node = node;
                 break;
             }
             visited[node->puzzle] = node->cost;
-            for (auto& n: node->neighbors()) {
-                if (can_visit(visited, (*n)))
-                    queue1.push(n);
+            node->puzzle.neighbors(dy, dx, neighbors);
+            for (auto &neighbor : neighbors) {
+                int ny = neighbor.first;
+                int nx = neighbor.second;
+                if (nx > -1 && ny > -1) {
+                    auto *n = new node_type(node, ny, nx);
+                    if (can_visit(visited, n->puzzle, n->cost))
+                        queue1.push(n);
+                    else
+                        delete n;
+                }
             }
         }
     }

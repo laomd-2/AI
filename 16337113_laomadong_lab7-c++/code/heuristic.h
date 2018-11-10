@@ -9,7 +9,7 @@
 #include "puzzle.h"
 
 class Manhattan {
-    int distance(int x, int i, int j, int dim_size) {
+    int distance(int x, int i, int j, int dim_size) const {
         int goal_i, goal_j;
         int d = 0;
         if (x != 0) {
@@ -21,7 +21,7 @@ class Manhattan {
         return d;
     }
 public:
-    int operator()(int x, int i, int j, int space_i, int space_j, int size) {
+    int operator()(int x, int i, int j, int space_i, int space_j, int size) const {
         int sum = 0;
         sum -= distance(x, i, j, size);
         sum += distance(x, space_i, space_j, size);
@@ -29,7 +29,7 @@ public:
     }
 
     template <int numbers>
-    int operator()(const Puzzle<numbers>& puzzle) {
+    int operator()(const Puzzle<numbers>& puzzle) const {
         int x;
         int d = 0;
         int dim_size = puzzle.size();
