@@ -9,9 +9,11 @@
 #include "heuristic.h"
 using namespace std;
 
+template <typename Heuristic>
 class AstarNode {
     int space_i, space_j;
     static int count;
+    static Heuristic heuristic;
 public:
     Puzzle puzzle;
     int cost;
@@ -19,9 +21,9 @@ public:
     int exchange = 0;
     const AstarNode* from;
 
-    AstarNode(const Puzzle& puzzle1, int g, int h, AstarNode* p = nullptr) : puzzle(puzzle1), from(p) {
-        cost = g;
-        estimate_cost = h;
+    explicit AstarNode(const Puzzle& puzzle1) : puzzle(puzzle1), from(nullptr) {
+        cost = 0;
+        estimate_cost = heuristic(puzzle);
         for (int i = 0; i < puzzle.dim_size; ++i) {
             for (int j = 0; j < puzzle.dim_size; ++j) {
                 if (puzzle.get(i, j) == 0) {
@@ -75,5 +77,9 @@ public:
     }
 };
 
-int AstarNode::count = 0;
+template <typename T>
+int AstarNode<T>::count = 0;
+
+template <typename T>
+T AstarNode<T>::heuristic;
 #endif //INC_16337113_LAOMADONG_LAB7_C_SEARCH_H

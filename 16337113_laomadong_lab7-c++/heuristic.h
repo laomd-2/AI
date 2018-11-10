@@ -20,16 +20,19 @@ int distance(int x, int i, int j, int dim_size) {
     return d;
 }
 
-int manhattan_distace(const Puzzle& puzzle) {
-    int x;
-    int d = 0;
-    for (int i = 0; i < puzzle.dim_size; ++i) {
-        for (int j = 0; j < puzzle.dim_size; ++j) {
-            x = puzzle.get(i, j);
-            d += distance(x, i, j, puzzle.dim_size);
+class Manhattan {
+public:
+    int operator()(const Puzzle& puzzle) {
+        int x;
+        int d = 0;
+        for (int i = 0; i < puzzle.dim_size; ++i) {
+            for (int j = 0; j < puzzle.dim_size; ++j) {
+                x = puzzle.get(i, j);
+                d += distance(x, i, j, puzzle.dim_size);
+            }
         }
+        return d;
     }
-    return d;
-}
+};
 
 #endif //INC_16337113_LAOMADONG_LAB7_C_HEURISTIC_H

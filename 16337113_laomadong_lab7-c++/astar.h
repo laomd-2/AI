@@ -14,6 +14,7 @@ using namespace std;
     || visited[node.puzzle] > node.cost)
 
 int astar_search(const Puzzle& start, vector<int>& path) {
+    typedef AstarNode<Manhattan> node_type;
     Puzzle target = start;
     for (int i = 0; i < target.dim_size; ++i) {
         for (int j = 0; j < target.dim_size; ++j) {
@@ -21,18 +22,18 @@ int astar_search(const Puzzle& start, vector<int>& path) {
         }
     }
 
-    auto pred = [](AstarNode* a, AstarNode* b) {
+    auto pred = [](node_type* a, node_type* b) {
         return a->cost + a->estimate_cost >= b->cost + b->estimate_cost;
     };
-    priority_queue<AstarNode*, vector<AstarNode*>, decltype(pred)> queue1(pred);
-    auto* start_node = new AstarNode(start, 0, manhattan_distace(start));
-    const AstarNode* target_node = nullptr;
+    priority_queue<node_type*, vector<node_type*>, decltype(pred)> queue1(pred);
+    auto* start_node = new node_type(start);
+    const node_type* target_node = nullptr;
     queue1.push(start_node);
 
     map<Puzzle, int> visited;
-    map<const AstarNode*, const AstarNode*> path_parent;
+    map<const node_type*, const node_type*> path_parent;
     while (!queue1.empty()) {
-        AstarNode* node = queue1.top();
+        node_type* node = queue1.top();
         queue1.pop();
         if (can_visit(visited, (*node))) {
             path_parent[node] = node->from;
@@ -52,7 +53,7 @@ int astar_search(const Puzzle& start, vector<int>& path) {
         path.push_back(target_node->exchange);
         target_node = path_parent[target_node];
     }
-    return AstarNode::nodes_gen();
+    return node_type::nodes_gen();
 }
 
 #endif //INC_16337113_LAOMADONG_LAB7_C_ASTAR_H
