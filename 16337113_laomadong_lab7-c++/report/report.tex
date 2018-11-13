@@ -2,8 +2,8 @@
 \documentclass[10pt,letterpaper]{ctexart}
 
 \usepackage{cvpr}
-% \usepackage{epsfig}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{amsmath}
 \newtheorem{myDef}{Definition}
 \newtheorem{myTheo}{Theorem}
@@ -24,13 +24,14 @@
     stringstyle=\color{magenta}\ttfamily,
     commentstyle=\color{green}\ttfamily,
     morecomment=[l][\color{magenta}]{\#},
-    morekeywords={*,__int64}
+    morekeywords={*,uint_fast64_t}
 }
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 \floatname{algorithm}{算法}
 \renewcommand{\algorithmicrequire}{\textbf{输入:}}
 \renewcommand{\algorithmicensure}{\textbf{输出:}}
+\renewcommand{\lstlistingname}{代码清单}
 
 \usepackage{enumitem}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -161,7 +162,7 @@
     \begin{equation}
       f(x) = g(x) + h(x)
     \end{equation}
-    其中$g(x)$是从初始节点到节点$x$付出的实际代价，如\figref{informed}实线，而$h(x)$是从节点$x$到目标节点的估计代价，如\figref{informed}虚线。$g(x)$在探索到$x$时就已经确定了，而$h(x)$则是人为设计的一个可采纳启发函数，它的好坏直接影响到问题求解时间。一般希望$h(x)$与$x$到目标节点的实际代价越接近越好，这样每次探索基本上都是沿着最优路径。
+    其中$g(x)$是从初始节点到节点$x$付出的实际代价，如\figref{fig:informed}实线，而$h(x)$是从节点$x$到目标节点的估计代价，如\figref{fig:informed}虚线。$g(x)$在探索到$x$时就已经确定了，而$h(x)$则是人为设计的一个可采纳启发函数，它的好坏直接影响到问题求解时间。一般希望$h(x)$与$x$到目标节点的实际代价越接近越好，这样每次探索基本上都是沿着最优路径。
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{informed.png}
@@ -171,7 +172,7 @@
     \item A*算法
     \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
       \item 算法描述
-      \par \qquad A*算法维护两个列表，分别记为开启列表和关闭列表。开启列表存放边界节点，关闭列表存放所有已求出最优路径的节点。值得一提的是，A*算法探索到一个节点$x$时，就找到了从起始节点到$x$的最优路径。
+      \par \qquad A*算法是升级版的BFS算法，它每次边界节点中选出$f(x)$最小的节点扩展，计算邻节点的$g(x)$和$h(x)$值存入边界中。它维护两个列表，分别记为开启列表和关闭列表。开启列表存放边界节点，关闭列表存放所有已求出最优路径的节点。
       \par \qquad 一个节点$x$的相邻节点是那些可以通过交换空白块一步到达的状态。扩展$x$的相邻节点$n$时，需要将$g(n)$最小的$n$放入开启列表，因为$n$可以由几个节点扩展。一种做法是直接更新开启列表中$n$的$g(n)$值，另一种做法是在开启列表中保留$n$的多个副本，只访问第一次遇到的。
       \begin{figure}[H]
       \centering
@@ -220,12 +221,12 @@
     \item 启发函数的设计
     \par \qquad 启发函数最大的作用在于剪枝，它直接关系到需要探索的状态的多少。一个好的启发函数应该使所有节点的预计距离与真实距离接近，这样每次探索时基本都在选择最优路径上的节点。在实际应用中，15 puzzle问题主要有以下几种启发函数：
     \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
-      \item 曼哈顿距离：计算每个数码与目标位置的坐标各个维度的差的绝对值，即：
+      \item \textbf{曼哈顿距离}：计算每个数码与目标位置的坐标各个维度的差的绝对值，即：
       \begin{equation}
         Manhattan(x,y) = \sum_{i=1}^d abs(x_i - y_i)
       \end{equation}
       其中d是坐标维度。
-      \item 曼哈顿距离+线性冲突（linear conflict）
+      \item \textbf{曼哈顿距离+线性冲突（linear conflict）}
 
       \begin{myDef}
         \textbf{线性冲突} 假设数码$t_j$和$t_k(t_j < t_k)$在同一行或同一列，并且它们的目标位置也在这一行或这一列。如果现在$t_j$在$t_k$的右边或下面，则它们是线性冲突的。
@@ -256,10 +257,9 @@
       \label{fig:lc-goal}}
       \end{figure}
 
-      \par \qquad 啦啦啦
-      \par \qquad 啦啦啦
+      \par \qquad 要计算线性冲突距离，就需要{\color{red}统计拼图中有几对线性冲突的数码}。{\color{red}最终的距离是对数的2倍}，因为每对线性冲突的数码，想要移动到目标位置，就需要其中一个先移动到其他行，等另一个移动完成后，它再移动回原来的行，这个过程至少需要额外的2步。
       \begin{algorithm}
-        \caption{计算数码x线性冲突距离}
+        \caption{计算数码$x$线性冲突距离}
           \begin{algorithmic}[1] %每行显示行号
               \Require 拼图$puzzle$，$x$的当前坐标$(i,j)$，拼图大小$n$
               \Function {linear\_conflict}{$puzzle, i, j, n$}
@@ -297,33 +297,32 @@
     \end{enumerate}
 \end{enumerate}
 
+\newpage
 \zhsubsec {关键代码}
 \begin{enumerate}[itemindent=2.5em,label=\arabic*、]
   \item 拼图压缩
-  \par \qquad 正常情况下，如果使用整形二维数组存储拼图，假设每个整数的大小是4个字节，那么表示15 puzzle就需要$16 \times 4=64$个字节。然而，15 puzzle中的数字是0-15，使用4位来表示一个数码就已经足够，这样总共需要8个字节，只有原来的$\frac{1}{8}$。如代码清单\ref{code:zip}，使用64位整形（\_\_int64）来表示拼图，位运算实现取数和存数操作。
+  \par \qquad 正常情况下，如果使用整形二维数组存储拼图，假设每个整数的大小是4个字节，那么表示15 puzzle就需要$16 \times 4=64$个字节。然而，15 puzzle中的数字是0-15，使用4位（BITWISE）来表示一个数码就已经足够，这样总共需要8个字节，只有原来的$\frac{1}{8}$。如代码清单\ref{code:zip}，使用64位无符号整形（uint\_fast64\_t）来表示拼图，位运算实现取数和存数操作。
 
-\begin{lstlisting}[caption=拼图压缩,label={code:zip}]
-// 用于表示数码的位数，0-15一个数字只需4位
-#define BITWISE 4
+\begin{lstlisting}[caption=拼图压缩,label={code:zip},captionpos=b]
 // 1111，用于取低4位
 #define LOWERBIT 15
 class Puzzle {
-  __int64 _puzzle;         // 16个数刚好用去64位
+  uint_fast64_t _puzzle;         // 16个数刚好用去64位
 public:
   int space_i, space_j;    // 空白块的位置
-  const int dim_size;      // 拼图的大小n
+  static const Puzzle goal(0x0FEDCBA987654321ULL);
 
-  Puzzle(int numbers) : dim_size(sqrt(numbers + 1) + 0.5), _puzzle(0) { }
+  explicit Puzzle(uint_fast64_t puzzle = 0) : _puzzle(puzzle) { }
   // 实现类似于二维数组下标索引的get、set接口
   int get(int i, int j) const {
       // 计算偏移量，与位数相乘，得到（i,j）元素最低位的地址
-      i = (i * dim_size + j) * BITWISE;
+      i = (i * 4 + j) * BITWISE;
       // 右移，取低4位就是（i,j）元素
       return (_puzzle >> i) & LOWERBIT;
   }
   void set(int i, int j, int x) {
-      __int64 x64 = LOWERBIT;;
-      int offset = (i * dim_size + j) * BITWISE;
+      uint_fast64_t x64 = LOWERBIT;;
+      int offset = (i * 4 + j) * BITWISE;
       _puzzle &= ~(x64 << offset);    // 先将（i,j）元素置为0
       x64 = x;
       _puzzle |= (x64 << offset);     // 左移取或就能把（i,j）置为x
@@ -333,20 +332,18 @@ public:
       }
   }
   // 移动（i,j）位
-  int swap(int i, int j) {
-      int exchange = get(i, j);
-      set(space_i, space_j, exchange);
+  void swap(int i, int j) {
+      set(space_i, space_j, get(i, j));
       set(i, j, 0);
-      return exchange;
   }
 }
 \end{lstlisting}
 
 \item A*算法
-\begin{lstlisting}[caption=A*,label={code:A*}]
-template <int numbers>
-void astar_search(const Puzzle<numbers>& start, Heuristic<numbers>* h,
-                  vector<int>& path) {
+\par \qquad 代码清单\ref{code:A*}维护了两个列表，一个是$open\_set$优先队列，相当于开启列表，它存储所有未找到最优路径的节点；另一个是{\color{red}$close\_set$哈希表，由于拼图是一个64位整数，哈希的键就是这个整数的哈希值，比康托展开快数倍}。在探索一个节点时，先用$can\_visit$函数检测节点是否在关闭列表或找到一个更短的最优路径，并将节点和当前的实际代价存入关闭列表$close\_set$；扩展节点时也用$can\_visit$检测从而把具有更小实际代价的邻居节点放入开启列表$open\_set$。
+\par \qquad 理论上，第一次探索一个节点时，就找到了从起始节点到它的最优路径，因此探索节点时$can\_visit$检测似乎没必要。但是在实际运行程序时发现如果不检测就找不到最优路径。经过思考，认为是当状态空间存在环路，即一种拼图X可以从多种不同的拼图得来，这样当A*算法在非最优路径上探索到X时，会认为找到了最优路径，而实际上回溯再次探索到X时的花费可能更少。
+\begin{lstlisting}[caption=A*,label={code:A*},captionpos=b]
+void astar_search(const Puzzle& start, Heuristic* h, vector<int>& path) {
   ...
   auto* start_node = new node_type(start, h);
   open_set.push(start_node);      // open_set是一个极小堆，按f(x)排序
@@ -354,17 +351,17 @@ void astar_search(const Puzzle<numbers>& start, Heuristic<numbers>* h,
       node_type* node = open_set.top();   // 取出f(x)最小的一个节点
       open_set.pop();
       // 开启集合中可能有node的多个副本，访问最小的一个
-      if (can_visit(visited, node->puzzle, node->cost)) {
+      if (can_visit(close\_set, node->puzzle, node->cost)) {
           if (node->puzzle == node->puzzle.goal)
               break;
-          visited[node->puzzle] = node->cost;
+          close\_set[node->puzzle] = node->cost;
           // dy、dx组合成四个方向，返回空白块四个方向邻居的坐标
           node->puzzle.neighbors(dy, dx, neighbors);
           for (auto &neighbor : neighbors) {
               if (neighbor.first > -1 && neighbor.second > -1) {
                   // 生成一个新的相邻节点，并移动位数码
                   auto *n = new node_type(node,neighbor.first,neighbor.second);
-                  if (can_visit(visited, n->puzzle, n->cost))
+                  if (can_visit(close\_set, n->puzzle, n->cost))
                       open_set.push(n);
               }
           }
@@ -376,11 +373,13 @@ void astar_search(const Puzzle<numbers>& start, Heuristic<numbers>* h,
 
 \newpage
 \item IDA*算法
-\begin{lstlisting}[caption=IDA*-DFS,label={code:IDA*-DFS}]
+\par \qquad 迭代加深的A*算法最关键的部分就是DFS。在每次递归，需要保证算法不会走回头路。也就是说，如果上一步交换空白块右边的块B，这样B就在空白块左边了，那么下一步就不应该交换左边的B。
+\par \qquad 代码清单\ref{code:IDA*-DFS}使用了一个小技巧——如果当前方向$i$等于前一个方向$prev\_dir \oplus 1$，那么它们就是相反的方向。这是因为$dy$和$dx$方向数组被设计成上、下、左、右的顺序，容易验证$0 == 1 \oplus 1$、$1 == 0 \oplus 1$，2、3同理。
+\par \qquad DFS的重中之重是回溯，交换了拼图$node$后，往下递归如果没有找到解，就需要换回来恢复原本的拼图，以供下一个邻居交换。
+\begin{lstlisting}[caption=IDA*-DFS,label={code:IDA*-DFS},captionpos=b]
 // prev_dir记录上一次移动的方向
-template <int numbers>
-bool dfs(Puzzle<numbers>& node, int cost, int estimate,
-        int limit, int prev_dir, Heuristic<numbers>* h, vector<int>& path) {
+bool dfs(Puzzle& node, int cost, int estimate,
+        int limit, int prev_dir, Heuristic* h, vector<int>& path) {
     if (node == node.goal) return true;
     if (cost + estimate > limit) return false;
 
@@ -392,7 +391,6 @@ bool dfs(Puzzle<numbers>& node, int cost, int estimate,
     for (int i = 0; i < 4; i++) {
         if (i == (prev_dir ^ 1))    // 0上1下2左3右，不走回头
             continue;
-
         int ni = neighbors[i].first, nj = neighbors[i].second;
         if (ni > -1 && nj > -1) {
             exchange = node.get(ni, nj);
@@ -413,8 +411,24 @@ bool dfs(Puzzle<numbers>& node, int cost, int estimate,
 
 \newpage
 \item 线性冲突相对距离
-\begin{lstlisting}[caption=线性冲突相对距离,label={code:lc-r}]
-int relative_distance(Puzzle<numbers>& b, int i, int j) {
+\par \qquad 要计算相对距离，一个很自然的问题是，交换之后哪些数码被影响了？考虑\figref{fig:lc-node}到\figref{fig:lc-neighbor}的情况，现在想要交换数码3得到新的邻居节点。显然，0和3数码所在的位置必受影响。此外，由于计算一个数码的线性冲突个数需要遍历同一行、列后面的元素，因此数码0和3{\color{red}同一行、列前面的块}也受影响。如\figref{fig:lc-influence}红色的块。
+
+\begin{figure}[H]%靠文字内容的左侧
+\centering
+\subfigure[node]{
+\includegraphics[width=0.2\textwidth]{lc-start.PNG}
+\label{fig:lc-node}}
+\subfigure[相邻节点]{
+\includegraphics[width=0.2\textwidth]{lc-neighbor.PNG}
+\label{fig:lc-neighbor}}
+\subfigure[受影响的块]{
+\includegraphics[width=0.2\textwidth]{lc-influence.PNG}
+\label{fig:lc-influence}}
+\end{figure}
+
+\begin{lstlisting}[caption=线性冲突相对距离,label={code:lc-r},captionpos=b]
+int lc_relative_distance(Puzzle& b, int i, int j) {
+    int d = 0;
     if (i == space_i) {
         d -= linear_conflict(b, i, j);
         // 第j列、第space_j列在（i,j）块和空白块前的元素
@@ -436,23 +450,25 @@ int relative_distance(Puzzle<numbers>& b, int i, int j) {
 }
 \end{lstlisting}
 \end{enumerate}
-  % \begin{figure}[H]
-  % \centering
-  % \subfigure[DLS]{
-  % \includegraphics[width=0.3\textwidth]{dls-0.PNG}
-  % \label{fig:dls}}
-  % \subfigure[IDS]{
-  % \includegraphics[width=0.3\textwidth]{dfs-2.PNG}
-  % \label{fig:ids}}
-  % \end{figure}
 
+\newpage
+\section{创新点\&优化}
+\begin{enumerate}[itemindent=1.5em,label=\arabic*、]
+  \item \textbf{优化拼图矩阵的拷贝}
+  \par \qquad 对拼图矩阵进行压缩，用一个64位整数来表示整个拼图而不是$4 \times 4$整数矩阵；并且直接对这个整数哈希存入关闭列表，而且比康托展开快。
+  \item \textbf{优化距离计算过程}
+  \par \qquad 使用相对距离而不是绝对距离，即计算一次绝对距离，之后从一种状态到另一种状态的转换只需重新计算那些受影响的块，其他块的启发距离不变；
+  \item \textbf{使用线性冲突（linear conflict）启发函数}
+  \par \qquad Manhattan、Minkowski、Dijkstra三种启发函数都过小地估计了节点的距离（依次减小），通过在Manhattan距离上加上线性冲突，更接近真实距离。
+\end{enumerate}
 \section{实验结果及分析}
-\zhsubsec{实验结果展示}
-\par \qquad 用小样例说明算法正确性。
+\par 实验中使用了两种算法（A*和IDA*）、两种关闭列表（字典和哈希表）、两种启发函数（Manhattan和Manhattan+Linear Conflict）、两种距离计算方式（相对和绝对）。表\ref{table:r-time}、\ref{table:a-time}分别列出了使用相对和绝对距离时算法的运行时间。
+\par 首先，四个样例中样例2、4、1、3的求解时间依次递增，也就是说算法的运行时间和最优解的步数是正相关的。假设启发函数能使节点的估计代价接近真实代价，在A*算法中，这是因为BFS的探索过程会一层一层探索完那些估计代价小的节点，直至估计代价达到最优路径真实代价；在IDA*算法中，阈值的迭代也会达到最优路径的真实代价。
+\par 其次，Manhattan+Linear Conflict启发函数比Manhattan启发函数更优。因为前者在后者的基础上增加了，而且是可采纳的，这样它的估计值就比后者更接近真实距离，进而减少了需要探索的状态空间的大小，即探索的过程更偏向于最优路径。
+\par 再次，IDA*算法比A*算法更优。在时间复杂度上，IDA*与A*相当，这类似于迭代加深搜索和BFS。但是，IDA*最显著的优点是它不需要对状态进行拷贝，而A*算法每形成一个新状态都要拷贝整个拼图，这大大减少了IDA*算法的求解时间。
+\par 另外，A*算法的关闭列表使用哈希表比使用字典更快（将近一半）。主要数据结构本身复杂度的问题，因为拼图已经做了压缩，字典是按拼图的字典序（实际上是64位整数的大小）存储，哈希表存储的是这个64位整数的哈希值，两者在数据拷贝方面相差无几。但是，使用拼图的哈希值存入关闭列表这种思想是很宝贵的，例如未对拼图压缩时，康托展开的哈希方法使关闭列表从矩阵的数组或字典变成哈希表，不仅省去拼图的拷贝过程，还大大减少拼图检索时间。
+\par 最后，相对距离计算方法比绝对距离更优。这毋庸置疑，绝对距离每次都遍历整个拼图重新计算每个位置的距离，而相对距离只重新计算那些交换后受影响的位置，至少可以保证比遍历所有位置要少计算。
 
-\zhsubsec{评测指标展示及分析}
-\par \qquad 分析并说出自己的思考。
-\makeatletter\def\@captype{table}\makeatother
 \begin{table}[H]
   \centering
   \caption{运行时间（/秒）——相对距离}
@@ -461,10 +477,12 @@ int relative_distance(Puzzle<numbers>& b, int i, int j) {
   \hline
   搜索策略 & 样例1 & 样例2 & 样例3 & 样例4\\
   \hline
-  A*(Manhattan) & 634 & 15 & 918 & 46 \\
-  A*(Manhattan+linear conflict) & 128 & 2 & 357 & 10 \\
-  IDA*(Manhattan) & 452 & 2 & 784 & 11 \\
-  IDA*(Manhattan+linear conflict) & 52 & 1 & 200 & 6 \\
+  A*(Manhattan) & 650.09 & 15.95 & 969.81 & 46.43 \\
+  A*(Manhattan+hashmap) & 304.53 & 8.47 & 411.39 & 22.04\\
+  A*(Manhattan+linear conflict) & 160.85 & 2.29 & 207.85 & 14.4 \\
+  A*(Manhattan+linear conflict+hashmap) & 84.52 & 1.72 & 99.96 & 8.21 \\
+  IDA*(Manhattan) & 449.57 & 2.75 & 778.88 & 10.49 \\
+  IDA*(Manhattan+linear conflict) & 81.75 & 3.04 & 304.83 & 9.55 \\
   \hline
   \hline
   \end{tabular}
@@ -478,13 +496,14 @@ int relative_distance(Puzzle<numbers>& b, int i, int j) {
   \hline
   搜索策略 & 样例1 & 样例2 & 样例3 & 样例4\\
   \hline
-  IDA*(Manhattan) & 1374 & 8 & 2364 & 32 \\
-  IDA*(Manhattan+linear conflict) & 135 & 5 & 505 & 15 \\
+  IDA*(Manhattan) & 1371.57 & 8.42 & 2362.81 & 31.91 \\
+  IDA*(Manhattan+linear conflict) & 137.1 & 5.27 & 509.78 & 15.9 \\
   \hline
   \hline
   \end{tabular}
 \end{table}
 
 \section{思考题}
-
+\zhsubsec{估价值和真实值的差距会造成算法性能差距的原因？}
+\par 不妨假设两种算法需要探索的状态空间大小都是$b^d$，其中$d$是最优路径的深度。一个好的启发函数能对这$b^d$个节点起到很好的剪枝作用。对于A*算法来说，它贪婪地选择探索估计代价最小的节点，如果估计值接近真实值，那么算法每次都能选择最优路径上的节点来探索，直到找到目标节点后返回，这样就只探索了$d$个节点；对于IDA*算法来说，如果估计值接近真实值，阈值的迭代次数就会少很多（极端情况下估计值等于真实值时，只需迭代一次就能找到解）。
 \end{document}

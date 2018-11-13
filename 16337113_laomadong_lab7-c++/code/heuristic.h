@@ -8,26 +8,24 @@
 #include <cmath>
 #include "puzzle.h"
 
-template <int numbers>
 class Heuristic {
 public:
-    pair<int, int> goal_pos(int x, int dim_size) const {
+    pair<int, int> goal_pos(int x) const {
         x -= 1;
-        return make_pair(x / dim_size, x % dim_size);
+        return make_pair(x / N, x % N);
     }
 
-    virtual int abs_distance(const Puzzle<numbers>& b, int i, int j) const = 0;
-    virtual int relative_distance(Puzzle<numbers>& b, int i, int j) const {
+    virtual int abs_distance(const Puzzle& b, int i, int j) const = 0;
+    virtual int relative_distance(Puzzle& b, int i, int j) const {
         int d = this->operator()(b);
         b.swap(i, j);
         return this->operator()(b) - d;
     }
 
-    int operator()(const Puzzle<numbers>& puzzle) const {
+    int operator()(const Puzzle& puzzle) const {
         int d = 0;
-        int dim_size = puzzle.size();
-        for (int i = 0; i < dim_size; ++i) {
-            for (int j = 0; j < dim_size; ++j) {
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < N; ++j) {
                 d += abs_distance(puzzle, i, j);
             }
         }
@@ -35,22 +33,20 @@ public:
     }
 };
 
-template <int numbers>
-class Manhattan : public Heuristic<numbers> {
+class Manhattan : public Heuristic {
 public:
-    virtual int abs_distance(const Puzzle<numbers>& b, int i, int j) const {
-        int n = b.size();
+    virtual int abs_distance(const Puzzle& b, int i, int j) const {
         int x = b.get(i, j);
 
         int d = 0;
         if (x != 0) {
-            auto goal = this->goal_pos(x, n);
+            auto goal = this->goal_pos(x);
             d = abs(i - goal.first) + abs(j - goal.second);
         }
         return d;
     }
 
-    virtual int relative_distance(Puzzle<numbers>& b, int i, int j) const {
+    virtual int relative_distance(Puzzle& b, int i, int j) const {
         int space_i = b.space_i, space_j = b.space_j;
         int d = abs_distance(b, i, j);
         b.swap(i, j);
@@ -58,37 +54,35 @@ public:
     }
 };
 
-template <int numbers>
-class ManhattanWithLC : public Manhattan<numbers> {
-    int linear_conflict(const Puzzle<numbers>& b, int i, int j) const {
-        int n = b.size();
+class ManhattanWithLC : public Manhattan {
+    int linear_conflict(const Puzzle& b, int i, int j) const {
         int x, y;
         x = b.get(i, j);
         int count = 0;
         if (x != 0) {
-            auto goal = Heuristic<numbers>::goal_pos(x, n);
+            auto goal = Heuristic::goal_pos(x);
             if (goal.second == j) {
-                for (int k = i + 1; k < n; ++k) {
+                for (int k = i + 1; k < N; ++k) {
                     y = b.get(k, j);
                     if (y == 0)
                         continue;
-                    int goal_j = Heuristic<numbers>::goal_pos(y, n).second;
+                    int goal_j = Heuristic::goal_pos(y).second;
 
                     if (goal_j == j) {
-                        if (y < x && (x - y) % n == 0) {
+                        if (y < x && (x - y) % N == 0) {
                             ++count;
                         }
                     }
                 }
             }
             if (goal.first == i) {
-                for (int k = j + 1; k < n; ++k) {
+                for (int k = j + 1; k < N; ++k) {
                     y = b.get(i, k);
                     if (y == 0)
                         continue;
-                    int goal_i = Heuristic<numbers>::goal_pos(y, n).first;
+                    int goal_i = Heuristic::goal_pos(y).first;
                     if (goal_i == i) {
-                        if (y < x && (x - y) < n) {
+                        if (y < x && (x - y) < N) {
                             ++count;
                         }
                     }
@@ -98,12 +92,12 @@ class ManhattanWithLC : public Manhattan<numbers> {
         return 2 * count;
     }
 public:
-    virtual int abs_distance(const Puzzle<numbers>& b, int i, int j) const {
-        int d = Manhattan<numbers>::abs_distance(b, i, j);
+    virtual int abs_distance(const Puzzle& b, int i, int j) const {
+        int d = Manhattan::abs_distance(b, i, j);
         return d + linear_conflict(b, i, j);
     }
 
-    virtual int relative_distance(Puzzle<numbers>& b, int i, int j) const {
+    virtual int relative_distance(Puzzle& b, int i, int j) const {
         int space_i = b.space_i, space_j = b.space_j;
         int d = 0;
         int exchange;
@@ -138,7 +132,7 @@ public:
             }
         }
 
-        auto goal = this->goal_pos(exchange, b.size());
+        auto goal = this->goal_pos(exchange);
         d -= abs(i - goal.first) + abs(j - goal.second);
         d += abs(space_i - goal.first) + abs(space_j - goal.second);
         return d;

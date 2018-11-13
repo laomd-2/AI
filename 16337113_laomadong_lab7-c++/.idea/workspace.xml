@@ -12,7 +12,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1bc86a9-ede3-441e-aa63-47164b497661" name="Default Changelist" comment="" />
+    <list default="true" id="c1bc86a9-ede3-441e-aa63-47164b497661" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/astar/astar.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/astar/astar.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/astar/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/astar/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/astar/node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/astar/node.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/heuristic.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/heuristic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/idastar/idastar.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/idastar/idastar.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/idastar/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/idastar/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/puzzle.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/puzzle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/16337113_laomadong.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report/16337113_laomadong.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/build/report.aux" beforeDir="false" afterPath="$PROJECT_DIR$/report/build/report.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/build/report.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/report/build/report.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/build/report.fls" beforeDir="false" afterPath="$PROJECT_DIR$/report/build/report.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/build/report.log" beforeDir="false" afterPath="$PROJECT_DIR$/report/build/report.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/build/report.xdv" beforeDir="false" afterPath="$PROJECT_DIR$/report/build/report.xdv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/astar-mh-r.o2574" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/idastar-lc-a.o2578" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/idastar-mh-a.o2580" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/idastar-mh-r.o2579" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,60 +96,77 @@
     <session id="-877703436">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="2" />
-          <entry key="h" value="4" />
+          <entry key="h" value="10" />
           <entry key="hpp" value="8" />
-          <entry key="txt" value="3" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="14" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="ObjectiveC" value="20" />
+          <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="132" />
-          <entry key="h" value="3180" />
-          <entry key="hpp" value="812" />
+          <entry key="cpp" value="171" />
+          <entry key="h" value="3795" />
+          <entry key="hpp" value="1196" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="4124" />
+          <entry key="ObjectiveC" value="5162" />
+          <entry key="PLAIN_TEXT" value="32" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/idastar/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/puzzle.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+              <folding>
+                <element signature="e#136#154#0" expanded="true" />
+                <element signature="e#2484#2486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/astar/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+            <state relative-caret-position="210">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -137,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/heuristic.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1995">
-              <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+            <state relative-caret-position="225">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding>
                 <element signature="e#143#159#0" expanded="true" />
               </folding>
@@ -149,10 +189,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/astar/astar.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="47" />
+            <state relative-caret-position="600">
+              <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
               <folding>
-                <element signature="e#135#151#0" expanded="true" />
+                <element signature="e#169#193#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,11 +201,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/astar/node.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="371">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
               <folding>
                 <element signature="e#136#153#0" expanded="true" />
-                <element signature="e#211#224#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,11 +213,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/idastar/idastar.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="506">
+              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
               <folding>
                 <element signature="e#143#157#0" expanded="true" />
-                <element signature="e#277#290#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -223,13 +261,13 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/code/node.hpp" />
         <option value="$PROJECT_DIR$/code/idastar/node.hpp" />
-        <option value="$PROJECT_DIR$/code/puzzle.h" />
         <option value="$PROJECT_DIR$/code/astar/node.hpp" />
-        <option value="$PROJECT_DIR$/code/astar/astar.hpp" />
-        <option value="$PROJECT_DIR$/code/heuristic.h" />
-        <option value="$PROJECT_DIR$/code/astar/main.cpp" />
         <option value="$PROJECT_DIR$/code/idastar/idastar.hpp" />
         <option value="$PROJECT_DIR$/code/idastar/main.cpp" />
+        <option value="$PROJECT_DIR$/code/heuristic.h" />
+        <option value="$PROJECT_DIR$/code/astar/astar.hpp" />
+        <option value="$PROJECT_DIR$/code/puzzle.h" />
+        <option value="$PROJECT_DIR$/code/astar/main.cpp" />
       </list>
     </option>
   </component>
@@ -240,8 +278,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="441" />
-    <option name="y" value="49" />
+    <option name="x" value="634" />
+    <option name="y" value="1" />
     <option name="width" value="681" />
     <option name="height" value="701" />
   </component>
@@ -305,6 +343,11 @@
               <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="idastar" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -313,7 +356,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../high-performance-computing/lab6" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -349,7 +392,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="idastar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../data/puzzle1.txt" PASS_PARENT_ENVS_2="true" PROJECT_NAME="16337113_laomadong_lab7_c__" TARGET_NAME="idastar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="16337113_laomadong_lab7_c__" RUN_TARGET_NAME="idastar">
+    <configuration name="idastar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../data/puzzle2.txt" PASS_PARENT_ENVS_2="true" PROJECT_NAME="16337113_laomadong_lab7_c__" TARGET_NAME="idastar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="16337113_laomadong_lab7_c__" RUN_TARGET_NAME="idastar">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -384,7 +427,9 @@
       <workItem from="1542028359658" duration="9043000" />
       <workItem from="1542037461222" duration="10385000" />
       <workItem from="1542078728856" duration="4209000" />
-      <workItem from="1542089204262" duration="42000" />
+      <workItem from="1542089204262" duration="253000" />
+      <workItem from="1542106724034" duration="5170000" />
+      <workItem from="1542115954528" duration="2100000" />
     </task>
     <task id="LOCAL-00001" summary="拼图压缩为__int64">
       <created>1541774876808</created>
@@ -470,28 +515,41 @@
       <option name="project" value="LOCAL" />
       <updated>1541853640988</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="IDA*-linear conflict heuristic">
+      <created>1542089285242</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1542089285242</updated>
+    </task>
+    <task id="LOCAL-00014" summary="IDA*-linear conflict heuristic">
+      <created>1542089345967</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542089345967</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81802000" />
+    <option name="totallyTimeSpent" value="89283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14220877" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14674735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26065573" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2594417" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39901477" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3262295" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32512316" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
@@ -517,7 +575,8 @@
     <MESSAGE value="拼图压缩为__int64" />
     <MESSAGE value="调整代码结构" />
     <MESSAGE value="IDA*" />
-    <option name="LAST_COMMIT_MESSAGE" value="IDA*" />
+    <MESSAGE value="IDA*-linear conflict heuristic" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDA*-linear conflict heuristic" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/puzzle4.txt" />
@@ -531,9 +590,7 @@
     <entry file="file://$PROJECT_DIR$/data/dst.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/in.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/in.txt" />
     <entry file="file://$PROJECT_DIR$/test.cpp" />
     <entry file="file://$PROJECT_DIR$/15puzzle_wd.c" />
     <entry file="file://$PROJECT_DIR$/idastar.h" />
@@ -576,74 +633,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/node.hpp" />
     <entry file="file://$PROJECT_DIR$/code/idastar/node.hpp" />
-    <entry file="file://$PROJECT_DIR$/data/puzzle2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/puzzle4.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/puzzle.h">
+    <entry file="file://D:/Program Files/mingw64/x86_64-w64-mingw32/include/stdint.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        <state relative-caret-position="141">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/puzzle2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/code/idastar/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/astar/main.cpp">
+    <entry file="file://D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="231">
+          <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/heuristic.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+        <state relative-caret-position="225">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
           <folding>
             <element signature="e#143#159#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/astar/astar.hpp">
+    <entry file="file://$PROJECT_DIR$/code/astar/node.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="47" />
+        <state relative-caret-position="371">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
           <folding>
-            <element signature="e#135#151#0" expanded="true" />
+            <element signature="e#136#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/astar/node.hpp">
+    <entry file="file://$PROJECT_DIR$/code/puzzle.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="341">
+          <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
           <folding>
-            <element signature="e#136#153#0" expanded="true" />
-            <element signature="e#211#224#0" expanded="true" />
+            <element signature="e#136#154#0" expanded="true" />
+            <element signature="e#2484#2486#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/idastar/idastar.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        <state relative-caret-position="506">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
           <folding>
             <element signature="e#143#157#0" expanded="true" />
-            <element signature="e#277#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/astar/astar.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#169#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/astar/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,12 +12,12 @@
 #include "../heuristic.h"
 using namespace std;
 
-template <int numbers>
-bool dfs(Puzzle<numbers>& node, int cost, int estimate,
-        int limit, int prev_dir, Heuristic<numbers>* h, vector<int>& path) {
+bool dfs(Puzzle& node, int cost, int estimate,
+        int limit, int prev_dir, Heuristic* h, vector<int>& path) {
     static const int dy[4] = {0, 0, +1, -1};
     static const int dx[4] = {+1, -1, 0, 0};
 
+//    cout << node << endl;
     if (node == node.goal) return true;
     if (cost + estimate > limit) {
         return false;
@@ -53,11 +53,10 @@ bool dfs(Puzzle<numbers>& node, int cost, int estimate,
     }
 }
 
-template <int numbers>
-void idastar_search(Puzzle<numbers>& start, Heuristic<numbers>* h, vector<int>& path) {
+void idastar_search(Puzzle& start, Heuristic* h, vector<int>& path) {
     int lower_bound = (*h)(start);
     for (int limits = lower_bound; limits < 70; ++limits) {
-        if (dfs<numbers>(start, 0, lower_bound,
+        if (dfs(start, 0, lower_bound,
                 limits, -1, h, path)) {
             break;
         }

@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Puzzle<15> puzzle;
+    Puzzle puzzle;
     fstream fin(argv[1]);
     fin >> puzzle;
     cout << puzzle;
@@ -15,7 +15,7 @@ int main(int argc, const char* argv[])
     vector<int> path;
 
     clock_t start_time = clock();
-    ManhattanWithLC<15> h;
+    ManhattanWithLC h;
     idastar_search(puzzle, &h, path);
     clock_t end_time = clock();
 

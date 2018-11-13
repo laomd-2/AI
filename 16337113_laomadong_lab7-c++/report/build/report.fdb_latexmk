@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1542088087 "build/report.xdv" "build/report.pdf" "build/report" 1542088089
-  "build/report.xdv" 1542088087 148856 87776c6542d68e90db1764489d8ff608 "xelatex"
+["xdvipdfmx"] 1542119848 "build/report.xdv" "build/report.pdf" "build/report" 1542119852
+  "build/report.xdv" 1542119847 186028 f2b93e5c48cb0c5a2b60dab15146cfc7 "xelatex"
   (generated)
   "build/report.pdf"
-["xelatex"] 1542088085 "report.tex" "build/report.xdv" "report" 1542088089
-  "build/report.aux" 1542088087 3684 f4e129e419df3c3d08dced3979df7440 ""
+["xelatex"] 1542119840 "report.tex" "build/report.xdv" "report" 1542119852
+  "build/report.aux" 1542119847 4268 4f1706a18c52ca1abc7995ea6e5cb1d0 ""
   "c:/Windows/Fonts/msyh.ttc" 1523489648 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "cvpr.sty" 1541903623 8186 51b6483a72e0a50ce1e426c0920c8b85 ""
   "cvpr_eso.sty" 1541903623 3878 6aa7c08ff2621006e0603349e40a30a8 ""
@@ -124,6 +124,12 @@
   "eso-pic.sty" 1541903622 9460 d2935ae95b5cd343fcf5887ff530288d ""
   "figures/astar.png" 1542009103 43264 0d6a54f9e96f61b032f02ed1b7944175 ""
   "figures/informed.png" 1542008572 7525 c6a34384cdb6f49037379e067a734f00 ""
+  "figures/lc-influence.PNG" 1542099663 1263 e3458b907ecae49c2af0b4c2f9e6f6f5 ""
+  "figures/lc-influence.png" 1542099663 1263 e3458b907ecae49c2af0b4c2f9e6f6f5 ""
+  "figures/lc-neighbor.PNG" 1542101301 1262 7bdae6f496d9fd0963bd5c462177e3ca ""
+  "figures/lc-neighbor.png" 1542101301 1262 7bdae6f496d9fd0963bd5c462177e3ca ""
+  "figures/lc-start.PNG" 1542101282 1265 d481db92a101290e0d4149c511dfdac0 ""
+  "figures/lc-start.png" 1542101282 1265 d481db92a101290e0d4149c511dfdac0 ""
   "figures/lc/2.PNG" 1542015139 2330 aaa7d7953c8d0e2b8151b54920e7ee58 ""
   "figures/lc/2.png" 1542015139 2330 aaa7d7953c8d0e2b8151b54920e7ee58 ""
   "figures/lc/3.PNG" 1542015163 2538 5000ce8ddb6cc8f470e7c3fe7fdcc835 ""
@@ -138,8 +144,9 @@
   "figures/lc/goal.png" 1542015085 4728 674d7c32296e1c866d7a317b86ee0372 ""
   "figures/lc/start.PNG" 1542015003 2378 825611004194e875b9af0e633a5be251 ""
   "figures/lc/start.png" 1542015003 2378 825611004194e875b9af0e633a5be251 ""
-  "report.tex" 1542088084 20765 466f1dc9ba10064ccd94a25e7686c5bc ""
+  "report.tex" 1542119838 27422 36d5ae5330f1291db1aa85b066551d43 ""
+  "wrapfig.sty" 1542099988 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   (generated)
   "build/report.log"
-  "build/report.xdv"
   "build/report.aux"
+  "build/report.xdv"

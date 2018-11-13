@@ -112,6 +112,8 @@ INPUT d:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT d:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT d:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
 INPUT d:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
+INPUT wrapfig.sty
+INPUT wrapfig.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT d:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -258,4 +260,7 @@ INPUT figures/lc/4.PNG
 INPUT figures/lc/5.PNG
 INPUT figures/lc/6.PNG
 INPUT figures/lc/goal.PNG
+INPUT figures/lc-start.png
+INPUT figures/lc-neighbor.png
+INPUT figures/lc-influence.png
 INPUT build/report.aux

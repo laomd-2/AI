@@ -9,17 +9,16 @@
 #include "../heuristic.h"
 using namespace std;
 
-template <int numbers>
 class AstarNode {
-    Heuristic<numbers>* heuristic;
+    Heuristic* heuristic;
 public:
-    Puzzle<numbers> puzzle;
+    Puzzle puzzle;
     int cost;
     int estimate_cost;
     int exchange = 0;
     const AstarNode* from;
 
-    explicit AstarNode(const Puzzle<numbers>& puzzle1, Heuristic<numbers>* h)
+    explicit AstarNode(const Puzzle& puzzle1, Heuristic* h)
         : puzzle(puzzle1), from(nullptr), heuristic(h),
           cost(0), estimate_cost((*heuristic)(puzzle)) {
     }
