@@ -1,4 +1,4 @@
-PWD D:/learning/AI/experiment/16337113_laomadong_lab7-c++/report
+PWD D:/learning/ai/lab/16337113_laomadong_lab7-c++/report
 INPUT d:/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
 INPUT report.tex
 OUTPUT build/report.log
@@ -249,4 +249,13 @@ INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT d:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT figures/informed.png
+INPUT figures/astar.png
+INPUT figures/lc/start.PNG
+INPUT figures/lc/2.PNG
+INPUT figures/lc/3.PNG
+INPUT figures/lc/4.PNG
+INPUT figures/lc/5.PNG
+INPUT figures/lc/6.PNG
+INPUT figures/lc/goal.PNG
 INPUT build/report.aux

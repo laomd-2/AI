@@ -14,11 +14,12 @@ int main(int argc, const char* argv[])
 
     vector<int> path;
 
-    time_t start_time = time(NULL);
-    idastar_search<Manhattan>(puzzle, path);
-    time_t end_time = time(NULL);
+    clock_t start_time = clock();
+    ManhattanWithLC<15> h;
+    idastar_search(puzzle, &h, path);
+    clock_t end_time = clock();
 
-    cout << "Time Used: " << end_time - start_time << " sec" << endl;
+    cout << "Time Used: " << (double)(end_time - start_time) / CLOCKS_PER_SEC << " sec" << endl;
     cout << "An optional solution " << path.size() << " moves" << endl;
     for (auto it = path.rbegin(); it != path.rend(); ++it) {
         cout << *it << ' ';

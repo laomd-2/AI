@@ -6,18 +6,18 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Puzzle<8> puzzle;
+    Puzzle<15> puzzle;
     fstream fin(argv[1]);
     fin >> puzzle;
     vector<int> path;
 
-    time_t start_time = time(NULL);
-    int node_gen = astar_search<Manhattan>(puzzle, path);
-    time_t end_time = time(NULL);
+    clock_t start_time = clock();
+    Manhattan<15> h;
+    astar_search(puzzle, &h, path);
+    clock_t end_time = clock();
 
     cout << puzzle;
-    cout << "Time Used: " << end_time - start_time << " sec" << endl;
-    cout << "Number of nodes generated: " << node_gen << endl;
+    cout << "Time Used: " << (double)(end_time - start_time) / CLOCKS_PER_SEC << " sec" << endl;
     cout << "An optional solution " << path.size() << " moves" << endl;
     for (auto it = path.rbegin(); it != path.rend(); ++it) {
         cout << *it << ' ';

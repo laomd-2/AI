@@ -5,6 +5,9 @@
 % \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\newtheorem{myDef}{Definition}
+\newtheorem{myTheo}{Theorem}
+
 \usepackage{amssymb}
 % \usepackage{color}
 \usepackage{subfigure}
@@ -143,30 +146,174 @@
     \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
         \item 问题定义
         \begin{itemize}
-            \item 初始状态
-            \item 行动
-            \item 状态空间
-            \item 目标测试
-            \item 路径耗散
+            \item 初始状态：将整个拼图建模为一个状态，初始的整个拼图为初始状态
+            \item 行动：交换空白块及其相邻块的位置
+            \item 状态空间：所有可能的拼图状态
+            \item 目标测试：拼图从上到下、从左到右依次为1、2、3...、14、15、0
+            \item 路径耗散：交换的次数
         \end{itemize}
-        \item 问题的解：序列
+        \item 问题的解：从最初拼图到目标，交换的非空白块的序列（用空白块上的数字表示）
+    \end{enumerate}
+    \item 启发式搜索
+    \par \qquad 无信息搜索最大的问题是将边界节点一视同仁，不管该节点到达目标节点的代价，因此常常无法找到最优解，需要搜索的状态空间也很大。
+    \par \qquad 启发式搜索利用问题所拥有的启发信息，设计估价函数来引导搜索的方向，从而减少搜索范围。也就是说，每个边界节点到目标节点的代价是可以预计的，这样就能优先探索那些最有可能到达目标状态的节点。
+    \par \qquad 通常估价函数$f(x)$由两部分组成：
+    \begin{equation}
+      f(x) = g(x) + h(x)
+    \end{equation}
+    其中$g(x)$是从初始节点到节点$x$付出的实际代价，如\figref{informed}实线，而$h(x)$是从节点$x$到目标节点的估计代价，如\figref{informed}虚线。$g(x)$在探索到$x$时就已经确定了，而$h(x)$则是人为设计的一个可采纳启发函数，它的好坏直接影响到问题求解时间。一般希望$h(x)$与$x$到目标节点的实际代价越接近越好，这样每次探索基本上都是沿着最优路径。
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{informed.png}
+    \caption{g(x)与h(x)示意图}
+    \label{fig:informed}
+    \end{figure}
+    \item A*算法
+    \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
+      \item 算法描述
+      \par \qquad A*算法维护两个列表，分别记为开启列表和关闭列表。开启列表存放边界节点，关闭列表存放所有已求出最优路径的节点。值得一提的是，A*算法探索到一个节点$x$时，就找到了从起始节点到$x$的最优路径。
+      \par \qquad 一个节点$x$的相邻节点是那些可以通过交换空白块一步到达的状态。扩展$x$的相邻节点$n$时，需要将$g(n)$最小的$n$放入开启列表，因为$n$可以由几个节点扩展。一种做法是直接更新开启列表中$n$的$g(n)$值，另一种做法是在开启列表中保留$n$的多个副本，只访问第一次遇到的。
+      \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.8\textwidth]{astar.png}
+      \caption{A*算法总体流程}
+      \label{fig:astar}
+      \end{figure}
+      \item 优缺点
+      \par \qquad 优点是时间复杂度与BFS相当；缺点是空间复杂度是指数级的，最坏情况下，在无界搜索空间中，扩展的节点数与解的深度$d$呈指数关系，为$O(b^d)$，其中$b$是后继节点的数目。
+    \end{enumerate}
+
+    \item IDA*算法
+    \par \qquad 许多15 puzzle问题都无法通过A*算法来求解，因为它需要生成太多的新状态。假设用二维数组来表示拼图，那么每个新状态都是整个二维数组的拷贝，这无疑需要消耗很多内存来保存开启列表和关闭列表。
+    \par \qquad IDA*(Iterative-Deepening-A*)克服了A*算法需要很大内存的缺点。它使用的是受限的DFS而不是BFS，在探索完一个节点后回溯，就能恢复拼图的状态，供下一个邻居使用，因此不需要拷贝二维数组。IDA*描述如下：
+    \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
+        \item 设置初始阈值为初始状态到目标状态的估计值；
+        \item 执行一次DFS，对那些$f(x)$超过阈值的节点进行剪纸，即不再探索；
+        \item 如果未找到解，增大阈值，回到步骤（2）。
+    \end{enumerate}
+
+    \begin{algorithm}
+      \caption{IDA*的DFS算法}
+        \begin{algorithmic}[1] %每行显示行号
+          \Require $cur\_state$当前拼图状态，$cur\_cost$状态的实际代价，$threshold$迭代阈值，$Goal?$目标测试
+          \Ensure 是否找到解，找到返回success, 找不到返回failure
+            \Function {DFS}{$cur\_state, cur\_cost, threshold, Goal?$}
+              \If {$cur\_cost + $h($cur\_state) > threshold$}
+                \State \Return failure
+              \EndIf
+              \If {$Goal?(cur\_state)$}
+                \State \Return success
+              \EndIf
+              \State $space\_i, space\_j \gets cur\_state$.space\_position()
+              \For {$i,j \in$ successors($cur\_state$)}
+                \State $cur\_state$.swap($i, j)$
+                \If {DFS($cur\_state, cur\_cost + 1, threshold, Goal?$) == success}
+                  \State \Return success
+                \EndIf
+                \State // 回溯
+                \State $cur\_state$.swap($space\_i, space\_j$)
+              \EndFor
+              \State \Return failure
+            \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+    \item 启发函数的设计
+    \par \qquad 启发函数最大的作用在于剪枝，它直接关系到需要探索的状态的多少。一个好的启发函数应该使所有节点的预计距离与真实距离接近，这样每次探索时基本都在选择最优路径上的节点。在实际应用中，15 puzzle问题主要有以下几种启发函数：
+    \begin{enumerate}[itemindent=1.5em,label=（\arabic*）]
+      \item 曼哈顿距离：计算每个数码与目标位置的坐标各个维度的差的绝对值，即：
+      \begin{equation}
+        Manhattan(x,y) = \sum_{i=1}^d abs(x_i - y_i)
+      \end{equation}
+      其中d是坐标维度。
+      \item 曼哈顿距离+线性冲突（linear conflict）
+
+      \begin{myDef}
+        \textbf{线性冲突} 假设数码$t_j$和$t_k(t_j < t_k)$在同一行或同一列，并且它们的目标位置也在这一行或这一列。如果现在$t_j$在$t_k$的右边或下面，则它们是线性冲突的。
+      \end{myDef}
+      \par \qquad 曼哈顿距离忽略了一个事实——数码A要移动到数码B的位置，数码B就需要先移开。例如\figref{fig:lc-start}到\figref{fig:lc-goal}的曼哈顿距离是4，而实际上从\figref{fig:lc-start}到\figref{fig:lc-goal}需要经过至少6步，因为数码1要先往下移动，给数码3“腾出”位置。
+      \begin{figure}[H]
+      \centering
+      \subfigure[起始]{
+      \includegraphics[width=0.1\textwidth]{lc/start.png}
+      \label{fig:lc-start}}
+      \subfigure[第一步]{
+      \includegraphics[width=0.1\textwidth]{lc/2.png}
+      \label{fig:lc-1}}
+      \subfigure[第二步]{
+      \includegraphics[width=0.1\textwidth]{lc/3.png}
+      \label{fig:lc-2}}
+      \subfigure[第三步]{
+      \includegraphics[width=0.1\textwidth]{lc/4.png}
+      \label{fig:lc-3}}
+      \subfigure[第四步]{
+      \includegraphics[width=0.1\textwidth]{lc/5.png}
+      \label{fig:lc-4}}
+      \subfigure[第五步]{
+      \includegraphics[width=0.1\textwidth]{lc/6.png}
+      \label{fig:lc-5}}
+      \subfigure[目标]{
+      \includegraphics[width=0.1\textwidth]{lc/goal.png}
+      \label{fig:lc-goal}}
+      \end{figure}
+
+      \par \qquad 啦啦啦
+      \par \qquad 啦啦啦
+      \begin{algorithm}
+        \caption{计算数码x线性冲突距离}
+          \begin{algorithmic}[1] %每行显示行号
+              \Require 拼图$puzzle$，$x$的当前坐标$(i,j)$，拼图大小$n$
+              \Function {linear\_conflict}{$puzzle, i, j, n$}
+                \State $x \gets puzzle[i][j]$
+                \State $goal\_i,goal\_j \gets$ goal\_pos($x$)
+                \State $count \gets 0$
+                \State // 每个元素只检查它后面的元素
+                \For {$k \in [j+1,n)$}
+                  \State $y \gets puzzle[i][k]$
+                  \State // x > y是产生冲突的前提，x-y<n表明可能在目标状态的同一行
+                  \If {$y$ != $0$ \textbf{and} $x$ > $y$ \textbf{and} $x - y$ < $n$}
+                    \State $y\_goal\_i,y\_goal\_j \gets$ goal\_pos($y$)
+                    \If {$goal\_i == y\_goal\_i$}
+                      \State $count \gets count + 1$
+                    \EndIf
+                  \EndIf
+                \EndFor
+                \State 同理，在列上重复以上循环
+                \State \Return 2 * count
+              \EndFunction
+          \end{algorithmic}
+      \end{algorithm}
+
+    %   \item disjoint pattern database heuristic
+    %   \par \qquad 该方法的基本思想是保存当前状态每个可能的子问题的实际代价，相加作为当前状态的估计代价。例如，对于\figref{fig:ap-start}，将其分为红色和蓝色两个不重叠的子问题，移动红色到目标\figref{fig:ap-goal}需要20步，移动蓝色需要25步，那么启发函数返回就是45=20+25。该方法最特殊的情况就是Manhattan启发函数，将当前状态分为15个子问题，每个子问题含有一个数码。
+    %   \begin{figure}[H]
+    %   \centering
+    %   \subfigure[起始]{
+    %     \includegraphics[width=0.2\textwidth]{ap/start.png}
+    %     \label{fig:ap-start}}
+    %     \subfigure[目标]{
+    %     \includegraphics[width=0.2\textwidth]{ap/goal.png}
+    %     \label{fig:ap-goal}}
+    %   \end{figure}
     \end{enumerate}
 \end{enumerate}
-\zhsubsec {关键代码}
 
-\begin{lstlisting}
+\zhsubsec {关键代码}
+\begin{enumerate}[itemindent=2.5em,label=\arabic*、]
+  \item 拼图压缩
+  \par \qquad 正常情况下，如果使用整形二维数组存储拼图，假设每个整数的大小是4个字节，那么表示15 puzzle就需要$16 \times 4=64$个字节。然而，15 puzzle中的数字是0-15，使用4位来表示一个数码就已经足够，这样总共需要8个字节，只有原来的$\frac{1}{8}$。如代码清单\ref{code:zip}，使用64位整形（\_\_int64）来表示拼图，位运算实现取数和存数操作。
+
+\begin{lstlisting}[caption=拼图压缩,label={code:zip}]
 // 用于表示数码的位数，0-15一个数字只需4位
 #define BITWISE 4
 // 1111，用于取低4位
 #define LOWERBIT 15
 class Puzzle {
-  // 16个数刚好用去64位
-  __int64 _puzzle;
+  __int64 _puzzle;         // 16个数刚好用去64位
 public:
-  const int dim_size;
+  int space_i, space_j;    // 空白块的位置
+  const int dim_size;      // 拼图的大小n
 
   Puzzle(int numbers) : dim_size(sqrt(numbers + 1) + 0.5), _puzzle(0) { }
-
   // 实现类似于二维数组下标索引的get、set接口
   int get(int i, int j) const {
       // 计算偏移量，与位数相乘，得到（i,j）元素最低位的地址
@@ -174,18 +321,121 @@ public:
       // 右移，取低4位就是（i,j）元素
       return (_puzzle >> i) & LOWERBIT;
   }
-
   void set(int i, int j, int x) {
       __int64 x64 = LOWERBIT;;
       int offset = (i * dim_size + j) * BITWISE;
-      // 先将（i,j）元素置为0
-      _puzzle &= ~(x64 << offset);
+      _puzzle &= ~(x64 << offset);    // 先将（i,j）元素置为0
       x64 = x;
-      // 左移取或就能把（i,j）置为x
-      _puzzle |= (x64 << offset);
+      _puzzle |= (x64 << offset);     // 左移取或就能把（i,j）置为x
+      if (x == 0) {
+          space_i = i;
+          space_j = j;
+      }
+  }
+  // 移动（i,j）位
+  int swap(int i, int j) {
+      int exchange = get(i, j);
+      set(space_i, space_j, exchange);
+      set(i, j, 0);
+      return exchange;
   }
 }
 \end{lstlisting}
+
+\item A*算法
+\begin{lstlisting}[caption=A*,label={code:A*}]
+template <int numbers>
+void astar_search(const Puzzle<numbers>& start, Heuristic<numbers>* h,
+                  vector<int>& path) {
+  ...
+  auto* start_node = new node_type(start, h);
+  open_set.push(start_node);      // open_set是一个极小堆，按f(x)排序
+  while (!open_set.empty()) {
+      node_type* node = open_set.top();   // 取出f(x)最小的一个节点
+      open_set.pop();
+      // 开启集合中可能有node的多个副本，访问最小的一个
+      if (can_visit(visited, node->puzzle, node->cost)) {
+          if (node->puzzle == node->puzzle.goal)
+              break;
+          visited[node->puzzle] = node->cost;
+          // dy、dx组合成四个方向，返回空白块四个方向邻居的坐标
+          node->puzzle.neighbors(dy, dx, neighbors);
+          for (auto &neighbor : neighbors) {
+              if (neighbor.first > -1 && neighbor.second > -1) {
+                  // 生成一个新的相邻节点，并移动位数码
+                  auto *n = new node_type(node,neighbor.first,neighbor.second);
+                  if (can_visit(visited, n->puzzle, n->cost))
+                      open_set.push(n);
+              }
+          }
+      }
+  }
+  ...
+}
+\end{lstlisting}
+
+\newpage
+\item IDA*算法
+\begin{lstlisting}[caption=IDA*-DFS,label={code:IDA*-DFS}]
+// prev_dir记录上一次移动的方向
+template <int numbers>
+bool dfs(Puzzle<numbers>& node, int cost, int estimate,
+        int limit, int prev_dir, Heuristic<numbers>* h, vector<int>& path) {
+    if (node == node.goal) return true;
+    if (cost + estimate > limit) return false;
+
+    int space_i = node.space_i, space_j = node.space_j;
+    int exchange;
+    pair<int, int> neighbors[4];
+
+    node.neighbors(dy, dx, neighbors);    // 获取空白块四个方向邻居的坐标
+    for (int i = 0; i < 4; i++) {
+        if (i == (prev_dir ^ 1))    // 0上1下2左3右，不走回头
+            continue;
+
+        int ni = neighbors[i].first, nj = neighbors[i].second;
+        if (ni > -1 && nj > -1) {
+            exchange = node.get(ni, nj);
+            // 从node移动（ni,nj）块变成相邻节点的相对距离
+            int relative = h->relative_distance(node, ni, nj);
+            path.push_back(exchange);
+            // 更新g(x)和h(x)继续dfs，找到解则返回
+            if (dfs(node, cost + 1, estimate + relative, limit, i, h, path))
+                return true;
+            // 找不到解需要回溯，恢复拼图，去掉白探索的路径
+            path.pop_back();
+            node.swap(space_i, space_j);
+        }
+    }
+    return false;
+}
+\end{lstlisting}
+
+\newpage
+\item 线性冲突相对距离
+\begin{lstlisting}[caption=线性冲突相对距离,label={code:lc-r}]
+int relative_distance(Puzzle<numbers>& b, int i, int j) {
+    if (i == space_i) {
+        d -= linear_conflict(b, i, j);
+        // 第j列、第space_j列在（i,j）块和空白块前的元素
+        for (int k = 0; k < i; ++k)
+            d -= linear_conflict(b, k, j) + linear_conflict(b, k, space_j);
+        // 第i行在（i,j）块和空白块前的元素
+        for (int k = 0; k < j && k < space_j; ++k)
+            d -= linear_conflict(b, i, k);
+        b.swap(i, j);
+        d += linear_conflict(b, space_i, space_j);
+        for (int k = 0; k < i; ++k)
+            d += linear_conflict(b, k, j) + linear_conflict(b, k, space_j);
+        for (int k = 0; k < j && k < space_j; ++k)
+            d += linear_conflict(b, i, k);
+    else {    // 列相同同理
+      ...
+    }
+    return d;
+}
+\end{lstlisting}
+\end{enumerate}
   % \begin{figure}[H]
   % \centering
   % \subfigure[DLS]{
@@ -196,36 +446,45 @@ public:
   % \label{fig:ids}}
   % \end{figure}
 
-\newpage
 \section{实验结果及分析}
 \zhsubsec{实验结果展示}
+\par \qquad 用小样例说明算法正确性。
 
 \zhsubsec{评测指标展示及分析}
-\begin{table}
+\par \qquad 分析并说出自己的思考。
+\makeatletter\def\@captype{table}\makeatother
+\begin{table}[H]
   \centering
-  \caption{运行时间（/秒）}
-  \label{table:time}
+  \caption{运行时间（/秒）——相对距离}
+  \label{table:r-time}
   \begin{tabular}{c|c|c|c|c}
   \hline
   搜索策略 & 样例1 & 样例2 & 样例3 & 样例4\\
   \hline
-  A* & 550 & 14 & 808 & 39 \\
+  A*(Manhattan) & 634 & 15 & 918 & 46 \\
+  A*(Manhattan+linear conflict) & 128 & 2 & 357 & 10 \\
+  IDA*(Manhattan) & 452 & 2 & 784 & 11 \\
+  IDA*(Manhattan+linear conflict) & 52 & 1 & 200 & 6 \\
+  \hline
   \hline
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{生成节点数}
-  \label{table:time}
+  \caption{运行时间（/秒）——绝对距离}
+  \label{table:a-time}
   \begin{tabular}{c|c|c|c|c}
   \hline
   搜索策略 & 样例1 & 样例2 & 样例3 & 样例4\\
   \hline
-  A* & 81004390 & 2662191 & 117201754 & 6927246 \\
+  IDA*(Manhattan) & 1374 & 8 & 2364 & 32 \\
+  IDA*(Manhattan+linear conflict) & 135 & 5 & 505 & 15 \\
+  \hline
   \hline
   \end{tabular}
 \end{table}
+
 \section{思考题}
 
 \end{document}
