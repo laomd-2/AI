@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2018.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\astar.dir/objects.a
-"D:\Program Files\mingw64\bin\ar.exe" cr CMakeFiles\astar.dir/objects.a @CMakeFiles\astar.dir\objects1.rsp
-"D:\Program Files\mingw64\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\astar.dir/objects.a -Wl,--no-whole-archive  -o astar.exe -Wl,--out-implib,libastar.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\astar.dir\linklibs.rsp

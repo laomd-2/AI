@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2018.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\idastar.dir/objects.a
-"D:\Program Files\mingw64\bin\ar.exe" cr CMakeFiles\idastar.dir/objects.a @CMakeFiles\idastar.dir\objects1.rsp
-"D:\Program Files\mingw64\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\idastar.dir/objects.a -Wl,--no-whole-archive  -o idastar.exe -Wl,--out-implib,libidastar.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\idastar.dir\linklibs.rsp
