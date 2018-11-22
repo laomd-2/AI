@@ -1,17 +1,17 @@
-import numpy as np
-from point import where, Point
+from point import where
 
 
 class Board:
+    FIRST = 'O'
+    SECOND = 'X'
+    BLANK = '*'
 
-    def __init__(self, board, first='O', second='X', blank='*'):
+    def __init__(self, board):
         self.__board = board
-        self.__players = first + second
         self.__now = False
-        self.__blank = blank
 
     def __str__(self):
-        char = self.__players[int(self.__now)]
+        char = (self.FIRST + self.SECOND)[int(self.__now)]
         moves = self.generate_moves(char)
         str_type = ''
         n = self.__board.shape[0]
@@ -43,7 +43,7 @@ class Board:
                 cnt = 0
                 pos = chess_pos + (i, j)
                 while self._is_valid(pos):
-                    if self.__board[pos] == self.__blank:
+                    if self.__board[pos] == self.BLANK:
                         if cnt > 0:
                             moves.append(pos)
                         break
@@ -53,9 +53,6 @@ class Board:
                         break
                     pos = pos + (i, j)
         return moves
-
-    def where(self, char):
-        return self.__board[self.__board == char]
 
     def generate_moves(self, char):
         all_moves = set()
@@ -70,7 +67,7 @@ class Board:
         return res
 
     def _apply_move(self, move, char):
-        if self.__board[move] != self.__blank:
+        if self.__board[move] != self.BLANK:
             return []
         all_reverse = []
         for i in (-1, 0, 1):
@@ -79,7 +76,7 @@ class Board:
                     continue
                 can_reverse = []
                 pos = move + (i, j)
-                while self._is_valid(pos) and self.__board[pos] != self.__blank:
+                while self._is_valid(pos) and self.__board[pos] != self.BLANK:
                     if self.__board[pos] != char:
                         can_reverse.append(pos)
                     else:
@@ -95,9 +92,9 @@ class Board:
         return all_reverse
 
     def score(self):
-        max_chesses = self.where(self.__players[0])
-        min_chesses = self.where(self.__players[1])
-        return max_chesses.size - min_chesses.size
+        max_chesses = where(self.__board == self.FIRST)
+        min_chesses = where(self.__board == self.SECOND)
+        return len(max_chesses) - len(min_chesses)
 
     def game_over(self):
-        return not self.generate_moves(self.__players[0]) and not self.generate_moves(self.__players[1])
+        return not self.generate_moves(self.FIRST) and not self.generate_moves(self.SECOND)
