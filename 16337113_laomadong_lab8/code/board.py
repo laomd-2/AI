@@ -23,7 +23,7 @@ class Board:
                 else:
                     str_type += self.__board[pos] + ' '
             str_type += '\n'
-        return str_type
+        return str_type.rstrip('\n')
 
     def __setitem__(self, key, value):
         self.__board[key] = value
@@ -94,7 +94,7 @@ class Board:
     def score(self):
         max_chesses = where(self.__board == self.FIRST)
         min_chesses = where(self.__board == self.SECOND)
-        return len(max_chesses) - len(min_chesses)
+        return len(max_chesses), len(min_chesses)
 
     def game_over(self):
         return not self.generate_moves(self.FIRST) and not self.generate_moves(self.SECOND)

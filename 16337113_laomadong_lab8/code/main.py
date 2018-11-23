@@ -1,21 +1,25 @@
 from board import Board
-from gambling.minimax import MiniMax
-from gambling.alpha_beta import AlphaBeta
+from gambling.negamaxalphabeta import NegamaxAlphaBeta
+from gambling.minimaxalphabeta import MinimaxAlphaBeta
 import numpy as np
+from heuristic import difference, sigmoid
 
 
 if __name__ == '__main__':
-    board = Board(np.array(np.loadtxt("../data/board.txt", dtype=str)))
-    computers = [MiniMax(board, True), AlphaBeta(board, False)]
+    board = Board(np.array(np.loadtxt("../data/board4.txt", dtype=str)))
+    computers = [MinimaxAlphaBeta(board, sigmoid, True), NegamaxAlphaBeta(board, sigmoid, False)]
     turn = 0
     print(board)
+    print()
     while not board.game_over():
         computer = computers[turn]
-        print(computer.__class__.__name__, "thinking...", end=' ')
-        print(computer.decide_and_drop())
+        print("computer", turn + 1, "thinking...", end=' ')
+        print(computer.decide_and_drop(8))
         turn = not turn
         print(board)
-    score = board.score()
+        print("score:", difference(board))
+        print()
+    score = difference(board)
     if score > 0:
         print(board.FIRST, "win!")
     elif score < 0:
