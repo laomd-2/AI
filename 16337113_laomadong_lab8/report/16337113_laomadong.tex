@@ -431,15 +431,52 @@ def negamax(self, remain_depth, alpha, beta, color):
   entry.value = best_score
   entry.move = best_move
   entry.depth = remain_depth
-  if entry.value <= alpha_orig:   # 满足上界，用于下次更新下界
+  if entry.value <= alpha_orig:
       entry.flag = Flag.BETA
-  elif entry.value >= beta_orig:  # 满足下界，用于下次更新上界
+  elif entry.value >= beta_orig:
       entry.flag = Flag.ALPHA
-  else:                           # 最初的alpha和beta值都没更新
+  else:
       entry.flag = Flag.VALUE
   self._table[s_board] = entry
       \end{python}
   \end{enumerate}
 \end{enumerate}
+
+\section{创新点\&优化}
+\begin{enumerate}[itemindent=2.5em,label=\arabic*、]
+  \item 实现了带$\alpha \beta$剪枝的Negamax算法；
+  \item 使用动态规划，以空间换时间，使算法可短时间内搜索到游戏结束，保证选择最优子节点。
+\end{enumerate}
+
 \section{实验结果及分析}
+下列图中，O表示先手，X表示后手，+表示提示可以落子的位置，得分是O棋子与X棋子之差。
+图(k)表示当前O有4处落子位置。下面展示开始的三个回合，更详细完整的对战过程在result文件夹下。
+\begin{figure}[H]
+  \centering
+  \subfigure[初始状态]{
+  \includegraphics[width=0.15\textwidth]{play/0.png}}
+\end{figure}
+
+\begin{enumerate}[itemindent=2.5em,label=\arabic*、]
+  \item 第一回合：玩家1下在(1,2)位置，翻一个X，得分3；玩家2下在(3,1)位置，翻一个O，得分0；
+  \item 第二回合：玩家1下在(4,3)位置，翻一个X，得分3；玩家2下在(0,2)位置，翻两个X，得分-2；
+  \item 第三回合：玩家1下在(0,1)位置，翻一个X，得分1；玩家2下在(0,0)位置，翻一个O，得分-2；
+\end{enumerate}
+
+
+\begin{figure}[H]
+  \centering
+  \subfigure[round 1-player1]{
+  \includegraphics[width=0.2\textwidth]{play/1.png}}
+  \subfigure[round 1-player2]{
+  \includegraphics[width=0.2\textwidth]{play/2.png}}
+  \subfigure[round 2-player1]{
+  \includegraphics[width=0.2\textwidth]{play/3.png}}
+  \subfigure[round 2-player2]{
+  \includegraphics[width=0.2\textwidth]{play/4.png}}
+  \subfigure[round 3-player1]{
+  \includegraphics[width=0.2\textwidth]{play/5.png}}
+  \subfigure[round 3-player2]{
+  \includegraphics[width=0.2\textwidth]{play/6.png}}
+\end{figure}
 \end{document}
