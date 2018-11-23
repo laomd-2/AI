@@ -352,7 +352,8 @@
   \par \qquad 递归完成之后回溯，恢复被翻转的棋子，尝试下一种落子。
   更新这些落子选择中最优的方案和$\alpha$、$\beta$值，在$\alpha \geq \beta$时停止扩展。除最优得分外，函数
   还需要记录最优落子位置，因为最顶层函数调用的目的就是要知道怎么落子。
-\begin{python}
+  \newpage
+  \begin{python}
 def minimax(self, remain_depth, alpha, beta, is_max):
   ... # 一些初始化，获得极大极小节点的棋子
   moves_list = self._board.generate_moves(char)   # 当前可落子的位置
@@ -388,31 +389,57 @@ def minimax(self, remain_depth, alpha, beta, is_max):
   $-\beta$、$-\alpha$值传递给子节点作为$\alpha$和$\beta$值。
 \begin{python}
 def negamax(self, remain_depth, alpha, beta, color):
-  best_move = None
+  ...
   best_score = -self.INF
-  char, opp_char = self.get_player_char(color == 1)
-  if remain_depth == 0:
+  moves_list = self._board.generate_moves(char)
+  if remain_depth == 0 or not moves_list:
       best_score = color * self._evaluation(self._board)
   else:
-      moves_list = self._board.generate_moves(char)
-      if moves_list:
-          for move in moves_list:
-              all_reverse = self._board.apply_move(move, char, False)
-              chosen_score = self.negamax(remain_depth - 1, -beta, -alpha, -color)[0]
-              for p in all_reverse:
-                  self._board[p] = opp_char
-              if all_reverse:
-                  self._board[move] = Board.BLANK
-              if best_score < -chosen_score:
-                  best_score = -chosen_score
-                  best_move = move
-              alpha = max(alpha, best_score)
-              if alpha >= beta:
-                  break
-      else:
-          best_score = color * self._evaluation(self._board)
+    for move in moves_list:
+      all_reverse = self._board.apply_move(move, char, False)
+      chosen_score = self.negamax(remain_depth - 1, -beta, -alpha, -color)[0]
+      ... # 回溯
+      if best_score < -chosen_score:
+          best_score, best_move = -chosen_score, move
+      alpha = max(alpha, best_score)
+      if alpha >= beta:
+          break
   return best_score, best_move
 \end{python}
+  \item 动态规划
+  \begin{enumerate}[itemindent=3.5em,label=(\arabic*)]
+    \item 搜索前
+      \begin{python}
+  s_board = str(self._board)
+  entry = self._table.get(s_board, None)
+  if entry is not None and entry.depth >= remain_depth:
+      if entry.flag == Flag.VALUE:    # 保存的是节点值，返回节点值和落子
+          return entry.value, entry.move
+      elif entry.flag == Flag.ALPHA:   # 保存的是alpha或beta，更新alpha、beta
+          alpha = max(alpha, entry.value)
+      else:
+          beta = min(beta, entry.value)
+      if alpha >= beta:
+          return entry.value, entry.move
+  alpha_orig = alpha
+  beta_orig = beta
+      \end{python}
+    \item 搜索后
+      \begin{python}
+  entry = Entry()
+  # 最终的best_score一定等于最终的alpha值或beta值
+  entry.value = best_score
+  entry.move = best_move
+  entry.depth = remain_depth
+  if entry.value <= alpha_orig:   # 满足上界，用于下次更新下界
+      entry.flag = Flag.BETA
+  elif entry.value >= beta_orig:  # 满足下界，用于下次更新上界
+      entry.flag = Flag.ALPHA
+  else:                           # 最初的alpha和beta值都没更新
+      entry.flag = Flag.VALUE
+  self._table[s_board] = entry
+      \end{python}
+  \end{enumerate}
 \end{enumerate}
 \section{实验结果及分析}
 \end{document}

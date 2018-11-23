@@ -3,14 +3,14 @@ from enum import Enum
 
 
 class Flag(Enum):
-    EXACT = 0
-    LOWERBOUND = 1
-    UPPERBOUND = 2
+    VALUE = 0
+    ALPHA = 1
+    BETA = 2
 
 
 class Entry:
     def __init__(self):
-        self.value = self.flag = self.depth = None
+        self.value = self.flag = self.depth = self.move = None
 
 
 class ZeroSum:
@@ -40,14 +40,14 @@ class ZeroSum:
         s_board = str(self._board)
         entry = self._table.get(s_board, None)
         if entry is not None and entry.depth >= remain_depth:
-            if entry.flag == Flag.EXACT:
-                return entry.value, None
-            elif entry.flag == Flag.LOWERBOUND:
+            if entry.flag == Flag.VALUE:
+                return entry.value, entry.move
+            elif entry.flag == Flag.ALPHA:
                 alpha = max(alpha, entry.value)
             else:
                 beta = min(beta, entry.value)
             if alpha >= beta:
-                return entry.value, None
+                return entry.value, entry.move
         alpha_orig = alpha
         beta_orig = beta
 
@@ -55,13 +55,14 @@ class ZeroSum:
 
         entry = Entry()
         entry.value = value
+        entry.move = move
         entry.depth = remain_depth
         if value <= alpha_orig:
-            entry.flag = Flag.UPPERBOUND
+            entry.flag = Flag.BETA
         elif value >= beta_orig:
-            entry.flag = Flag.LOWERBOUND
+            entry.flag = Flag.ALPHA
         else:
-            entry.flag = Flag.EXACT
+            entry.flag = Flag.VALUE
         self._table[s_board] = entry
         return value, move
 
