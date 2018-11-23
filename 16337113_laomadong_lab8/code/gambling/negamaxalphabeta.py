@@ -7,11 +7,13 @@ class NegamaxAlphaBeta(ZeroSum):
     def __init__(self, board, evaluation, first=True):
         super(NegamaxAlphaBeta, self).__init__(board, evaluation, first)
         self._color = 1 if first else -1
+        self._table = dict()
 
     def _decide(self, remain_depth):
-        return self._negamax(remain_depth, -self.INF, self.INF, self._color)[1]
+        return self.search_internal(remain_depth, -self.INF, self.INF, self._color)[1]
 
-    def _negamax(self, remain_depth, alpha, beta, color):
+    def search_internal(self, remain_depth, alpha, beta, *args):
+        color = args[0]
         best_move = None
         best_score = -self.INF
         char, opp_char = self.get_player_char(color == 1)
@@ -22,7 +24,7 @@ class NegamaxAlphaBeta(ZeroSum):
             if moves_list:
                 for move in moves_list:
                     all_reverse = self._board.apply_move(move, char, False)
-                    chosen_score = self._negamax(remain_depth - 1, -beta, -alpha, -color)[0]
+                    chosen_score = self.search_internal(remain_depth - 1, -beta, -alpha, -color)[0]
                     for p in all_reverse:
                         self._board[p] = opp_char
                     if all_reverse:

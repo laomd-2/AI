@@ -6,8 +6,8 @@ from heuristic import difference, sigmoid
 
 
 if __name__ == '__main__':
-    board = Board(np.array(np.loadtxt("../data/board4.txt", dtype=str)))
-    computers = [MinimaxAlphaBeta(board, sigmoid, True), NegamaxAlphaBeta(board, sigmoid, False)]
+    board = Board(np.array(np.loadtxt("../data/board.txt", dtype=str)))
+    computers = [NegamaxAlphaBeta(board, sigmoid, True), MinimaxAlphaBeta(board, sigmoid, False)]
     turn = 0
     print(board)
     print()

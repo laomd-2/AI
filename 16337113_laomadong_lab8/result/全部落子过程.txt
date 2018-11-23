@@ -1,0 +1,305 @@
+* * * * * * 
+* * + * * * 
+* + X O * * 
+* * O X + * 
+* * * + * * 
+* * * * * * 
+
+computer 1 thinking... (1, 2)
+* * * * * * 
+* + O + * * 
+* * O O * * 
+* + O X * * 
+* * * * * * 
+* * * * * * 
+score: 3
+
+computer 2 thinking... (3, 1)
+* * * * * * 
+* * O * * * 
+* * O O * * 
+* X X X * * 
++ + + + + * 
+* * * * * * 
+score: 0
+
+computer 1 thinking... (4, 3)
+* * + * * * 
+* * O + + * 
+* * O O * * 
+* X X O + * 
+* * * O * * 
+* * * * + * 
+score: 3
+
+computer 2 thinking... (0, 2)
+* + X * * * 
+* + X * * * 
+* + X O * * 
++ X X O * * 
+* + * O * * 
+* * * * * * 
+score: -2
+
+computer 1 thinking... (0, 1)
++ O X * * * 
+* * O * + * 
+* * X O + * 
+* X X O + * 
+* * * O + * 
+* * * * + * 
+score: 1
+
+computer 2 thinking... (0, 0)
+X X X * * * 
+* + O * * * 
+* + X O * * 
++ X X O * * 
+* + + O * * 
+* * * * * * 
+score: -2
+
+computer 1 thinking... (3, 0)
+X X X * * * 
+* * O * * * 
+* * X O + * 
+O O O O + * 
++ * + O + * 
+* * * * * * 
+score: 3
+
+computer 2 thinking... (4, 4)
+X X X * * * 
+* * O + * * 
+* + X O * * 
+O O O X + * 
+* * * O X + 
+* * * * * * 
+score: 0
+
+computer 1 thinking... (3, 4)
+X X X * * * 
+* * O * * * 
+* * X O + * 
+O O O O O * 
++ * + O X + 
+* * * * * * 
+score: 3
+
+computer 2 thinking... (4, 5)
+X X X * * * 
+* + X + + * 
+* * X X * + 
+O O O O X + 
+* * * O X X 
+* * * * * + 
+score: -4
+
+computer 1 thinking... (5, 5)
+X X X * * * 
+* * X * * * 
+* * X X * * 
+O O O O X * 
++ + + O O X 
+* * + + + O 
+score: -1
+
+computer 2 thinking... (4, 2)
+X X X * * * 
+* + X + * * 
+* * X X * * 
+O O X O X + 
+* * X X X X 
+* + * + * O 
+score: -8
+
+computer 1 thinking... (3, 5)
+X X X * * * 
+* * X * * * 
++ * X X + + 
+O O X O O O 
++ * X X X O 
+* * * * * O 
+score: -3
+
+computer 2 thinking... (2, 0)
+X X X * * * 
++ + X + * * 
+X * X X * * 
+O X X O O O 
+* + X X X O 
+* + + + + O 
+score: -6
+
+computer 1 thinking... (5, 4)
+X X X * * * 
+* * X * * * 
+X * X X + + 
+O X X O O O 
++ * X X O O 
+* * * * O O 
+score: -3
+
+computer 2 thinking... (2, 5)
+X X X * * * 
++ + X + * + 
+X + X X + X 
+O X X O X O 
+* + X X O O 
+* + * + O O 
+score: -6
+
+computer 1 thinking... (1, 5)
+X X X * * * 
+* * X * * O 
+X * X X + O 
+O X X O X O 
++ * X X O O 
+* * * * O O 
+score: -3
+
+computer 2 thinking... (2, 4)
+X X X * * * 
++ + X + + O 
+X + X X X O 
+O X X X X O 
+* + X X O O 
+* + + * O O 
+score: -6
+
+computer 1 thinking... (1, 4)
+X X X * * + 
+* * X * O O 
+X * X X O O 
+O X X X O O 
++ * X X O O 
+* * * * O O 
+score: -1
+
+computer 2 thinking... (0, 5)
+X X X + + X 
++ + X + X O 
+X + X X O O 
+O X X X O O 
+* + X X O O 
+* + + * O O 
+score: -4
+
+computer 1 thinking... (4, 1)
+X X X * * X 
+* * X * X O 
+X * X X O O 
+O X X X O O 
++ O O O O O 
++ + + + O O 
+score: 1
+
+computer 2 thinking... (4, 0)
+X X X + + X 
+* + X + X O 
+X + X X O O 
+X X X X O O 
+X O O O O O 
+* * * * O O 
+score: -2
+
+computer 1 thinking... (1, 3)
+X X X * + X 
+* * X O O O 
+X * X O O O 
+X X X O O O 
+X O O O O O 
++ + + + O O 
+score: 5
+
+computer 2 thinking... (5, 0)
+X X X * * X 
+* + X O O O 
+X + X O O O 
+X X X O O O 
+X X O O O O 
+X * * * O O 
+score: 2
+
+computer 1 thinking... (1, 1)
+X X X * + X 
+* O O O O O 
+X + O O O O 
+X X X O O O 
+X X O O O O 
+X * + + O O 
+score: 7
+
+computer 2 thinking... (5, 2)
+X X X * * X 
+* O O O O O 
+X + O O O O 
+X X X O O O 
+X X X O O O 
+X + X * O O 
+score: 4
+
+computer 1 thinking... (5, 1)
+X X X * + X 
+* O O O O O 
+X + O O O O 
+X X X O O O 
+X X O O O O 
+X O X + O O 
+score: 7
+
+computer 2 thinking... (5, 3)
+X X X * * X 
+* O O O O O 
+X + O O O O 
+X X X O O O 
+X X X O O O 
+X O X X O O 
+score: 4
+
+computer 1 thinking... (2, 1)
+X X X + + X 
+* O O O O O 
+X O O O O O 
+X O O O O O 
+X O X O O O 
+X O X X O O 
+score: 11
+
+computer 2 thinking... (0, 3)
+X X X X + X 
++ O X X O O 
+X X O X O O 
+X O O X O O 
+X O X X O O 
+X O X X O O 
+score: -2
+
+computer 1 thinking... (1, 0)
+X X X X * X 
+O O X X O O 
+X O O X O O 
+X O O X O O 
+X O X X O O 
+X O X X O O 
+score: 1
+
+computer 2 thinking... cannot move
+X X X X * X 
+O O X X O O 
+X O O X O O 
+X O O X O O 
+X O X X O O 
+X O X X O O 
+score: 1
+
+computer 1 thinking... (0, 4)
+X X X X O X 
+O O X O O O 
+X O O X O O 
+X O O X O O 
+X O X X O O 
+X O X X O O 
+score: 4
+
+O win!

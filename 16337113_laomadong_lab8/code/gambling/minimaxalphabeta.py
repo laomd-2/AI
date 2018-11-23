@@ -7,11 +7,13 @@ class MinimaxAlphaBeta(ZeroSum):
     def __init__(self, board, evaluation, first=True):
         super(MinimaxAlphaBeta, self).__init__(board, evaluation, first)
         self._is_max = first
+        self._table = dict()
 
     def _decide(self, remain_depth):
-        return self._minimax(remain_depth, -self.INF, self.INF, self._is_max)[1]
+        return self.search_internal(remain_depth, -self.INF, self.INF, self._is_max)[1]
 
-    def _minimax(self, remain_depth, alpha, beta, ismax):
+    def search_internal(self, remain_depth, alpha, beta, *args):
+        ismax = args[0]
         best_move = None
         best_score = -self.INF
         if not ismax:
@@ -24,7 +26,7 @@ class MinimaxAlphaBeta(ZeroSum):
             if moves_list:
                 for move in moves_list:
                     all_reverse = self._board.apply_move(move, char, False)
-                    chosen_score = self._minimax(remain_depth - 1, alpha, beta, not ismax)[0]
+                    chosen_score = self.search_internal(remain_depth - 1, alpha, beta, not ismax)[0]
                     for p in all_reverse:
                         self._board[p] = opp_char
                     if all_reverse:

@@ -317,18 +317,22 @@
             \EndFunction
         \end{algorithmic}
     \end{algorithm}
-    \item 探索深度的控制
-    \par \qquad 如果一直探索到游戏结束的状态，博弈树搜索总能找到对自己最优的落子位置。
-    但是，每向下扩展一层，需要探索的节点数就呈指数级别增长（$b^d$），这是很可怕的，相当耗时，
-    因此需要限制搜索的深度。
-    \par \qquad 最简单的做法是固定一个最大深度，但是事实告诉我，棋盘上落子越多，算法搜索的速度
-    越快，因为节点的平均分支数$b$减少了。因此，每一层可以设置一个固定的往下探索的总节点数$k_i$，
-    对于该层一个具有$b_j$个分支的节点，探索深度就是$d_j = \min\{d_{parent} - 1, \log_{b_j}k_i(b_j > 0)\}$。
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.8\textwidth]{depth.PNG}
-      \caption{深度控制示例}
-    \end{figure}
+    % \item 探索深度的控制
+    % \par \qquad 如果一直探索到游戏结束的状态，博弈树搜索总能找到对自己最优的落子位置。
+    % 但是，每向下扩展一层，需要探索的节点数就呈指数级别增长（$b^d$），这是很可怕的，相当耗时，
+    % 因此需要限制搜索的深度。
+    % \par \qquad 最简单的做法是固定一个最大深度，但是事实告诉我，棋盘上落子越多，算法搜索的速度
+    % 越快，因为节点的平均分支数$b$减少了。因此，每一层可以设置一个固定的往下探索的总节点数$k_i$，
+    % 对于该层一个具有$b_j$个分支的节点，探索深度就是$d_j = \min\{d_{parent} - 1, \log_{b_j}k_i(b_j > 0)\}$。
+    % \begin{figure}[H]
+    %   \centering
+    %   \includegraphics[width=0.8\textwidth]{depth.PNG}
+    %   \caption{深度控制示例}
+    % \end{figure}
+    \item 动态规划
+    \par \qquad {\color{red}在搜索过程中，有很多子问题重复出现，因此可以用一个表格记录已搜索节点的节点值，下一次遇到时直接查表
+    而无需搜索}。实验中发现，不使用动态规划前，6X6棋盘每次落子搜索时间很长（等了十几分钟还没得到解），而加上动态规划之后
+    能在十几秒以内得到解。
     \item 评估函数的设计
       \begin{enumerate}[itemindent=2.5em,label=(\arabic*)]
         \item 棋子数之差
