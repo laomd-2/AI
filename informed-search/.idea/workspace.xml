@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="16337113_laomadong_lab7_c__" targetName="astar" />
+      <config projectName="16337113_laomadong_lab7_c__" targetName="idastar" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1bc86a9-ede3-441e-aa63-47164b497661" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../16337113_lab_bayesian/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_lab_bayesian/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_lab_bayesian/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/16337113_laomadong_csp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/code/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/code/n_queen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_csp/code/point.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/16337113_Laomadong_lab1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/IDF.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/KNN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/classification/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/classification/label_policy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/csv_io.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/regression/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/KNN/regression/label_policy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/TFIDF/IDF.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/TFIDF/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/code/TFIDF/myio.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/16337113_laomadong_KNN_classification.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/16337113_laomadong_KNN_regression.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/16337113_laomadong_TFIDF.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/classification_dataset/test_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/classification_dataset/train_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/classification_dataset/validation_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/regression_dataset/16351234_Sample_KNN_regression.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/regression_dataset/test_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/regression_dataset/train_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/regression_dataset/validation_set.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/regression_dataset/validation相关度评估.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab1/result/lab1_data/semeval.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/.ipynb_checkpoints/dt_lmd-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/cross_val.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/tree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/utils/data_manipulation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/utils/data_operation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/code/utils/io.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/dt_lmd.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/16337113_laomadong.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/16337113_laomadong_lab2.synctex.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/16337113_laomadong_lab2.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.fdb_latexmk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.fls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/build/16337113_laomadong_lab2.xdv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p7.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p8.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/report/p9.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/result/16337113_laomadong.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/result/lab2_data/Car_test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/result/lab2_data/Car_train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab2/result/lab2_data/car_test_with_label.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/16337113_laomadong_lab3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/code/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/code/maze_io.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/code/point.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/code/search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/data/MazeData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/data/path-depth_first.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab3/data/path-iterative_deepen.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/16337113_laomadong_lab7-c++(1).iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/16337113_laomadong_lab7-c++.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/astar/astar.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/astar/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/astar/node.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/heuristic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/idastar/idastar.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/idastar/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/code/puzzle.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/data/dst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/data/puzzle1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/data/puzzle2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/data/puzzle3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/data/puzzle4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/16337113_laomadong.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/Saliency.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/build/report.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/build/report.fdb_latexmk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/build/report.fls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/build/report.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/build/report.xdv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/cvpr.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/cvpr_eso.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/eso-pic.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/ap/goal.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/ap/start.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/astar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/chap3part3chap4.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/informed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc-influence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc-neighbor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc-start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/goal.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/lc/start.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/figures/slidingPuzzlesHeuristicsCaoGause.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/ieee.bst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/report.synctex.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/report.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/template.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/report/wrapfig.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/astar-lc-hash.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/astar-lc-r.o2629" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/astar-mh-hash.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/astar-mh-r.o2631" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/idastar-lc-a.o2628" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/idastar-lc-a.o2633" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/idastar-lc-r.o2627" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/idastar-mh-a.o2632" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/result/idastar-mh-r.o2630" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab7-c++/test/puzzle1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/.idea/16337113_laomadong_lab8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/board.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/gambling/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/gambling/minimaxalphabeta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/gambling/negamaxalphabeta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/gambling/zero_sum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/heuristic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/code/point.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/data/board.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/data/board4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/data/board8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/16337113_laomadong.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/16337113_laomadong.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/Saliency.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/cvpr.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/cvpr_eso.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/eso-pic.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/7.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/8.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/ab-1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/depth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/minimax-example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/0.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/figures/play/6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/ieee.bst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/report/wrapfig.sty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../16337113_laomadong_lab8/result/全部落子过程.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../decision_tree/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../decision_tree/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../non-informed-search/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1970151814">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="c" value="8" />
+          <entry key="cpp" value="3295" />
+          <entry key="h" value="6482" />
+          <entry key="hpp" value="3301" />
+          <entry key="txt" value="145" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CMakeLists.txt" value="110" />
+          <entry key="ObjectiveC" value="13086" />
+          <entry key="PLAIN_TEXT" value="35" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="c" value="1" />
+          <entry key="cpp" value="11" />
+          <entry key="h" value="22" />
+          <entry key="hpp" value="34" />
+          <entry key="txt" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CMakeLists.txt" value="1" />
+          <entry key="ObjectiveC" value="68" />
+          <entry key="PLAIN_TEXT" value="10" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-877703436">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cpp" value="2" />
+          <entry key="h" value="10" />
+          <entry key="hpp" value="8" />
+          <entry key="txt" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="20" />
+          <entry key="PLAIN_TEXT" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cpp" value="171" />
+          <entry key="h" value="3795" />
+          <entry key="hpp" value="1196" />
+          <entry key="txt" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="ObjectiveC" value="5162" />
+          <entry key="PLAIN_TEXT" value="32" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1287254861">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/idastar/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/puzzle.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1950">
+              <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/astar/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/heuristic.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/astar/astar.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/astar/node.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/idastar/idastar.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>scanf</find>
+      <find>vector&lt;int&gt;</find>
+      <find>b[i]</find>
+      <find>b[j]</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>vector&lt;vector&lt;int&gt;&gt;</replace>
+      <replace>b_i</replace>
+      <replace>b_j</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/data/dst.txt" />
+        <option value="$PROJECT_DIR$/vector_io.hpp" />
+        <option value="$PROJECT_DIR$/test.cpp" />
+        <option value="$PROJECT_DIR$/15puzzle_wd.c" />
+        <option value="$PROJECT_DIR$/idastar.h" />
+        <option value="$PROJECT_DIR$/puzzle.h" />
+        <option value="$PROJECT_DIR$/code/search.h" />
+        <option value="$PROJECT_DIR$/code/astar/heuristic.h" />
+        <option value="$PROJECT_DIR$/code/node.h" />
+        <option value="$PROJECT_DIR$/code/astar/astar.h" />
+        <option value="$PROJECT_DIR$/search.h" />
+        <option value="$PROJECT_DIR$/astar.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/heuristic.h" />
+        <option value="$PROJECT_DIR$/node.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/code/node.hpp" />
+        <option value="$PROJECT_DIR$/code/idastar/node.hpp" />
+        <option value="$PROJECT_DIR$/code/astar/node.hpp" />
+        <option value="$PROJECT_DIR$/code/idastar/idastar.hpp" />
+        <option value="$PROJECT_DIR$/code/idastar/main.cpp" />
+        <option value="$PROJECT_DIR$/code/heuristic.h" />
+        <option value="$PROJECT_DIR$/code/astar/astar.hpp" />
+        <option value="$PROJECT_DIR$/code/puzzle.h" />
+        <option value="$PROJECT_DIR$/code/astar/main.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="634" />
+    <option name="y" value="1" />
+    <option name="width" value="681" />
+    <option name="height" value="701" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="b2602c69:ProjectViewProjectNode" />
+              <item name="16337113_laomadong_lab7-c++" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="b2602c69:ProjectViewProjectNode" />
+              <item name="16337113_laomadong_lab7-c++" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="b2602c69:ProjectViewProjectNode" />
+              <item name="16337113_laomadong_lab7-c++" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="astar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="b2602c69:ProjectViewProjectNode" />
+              <item name="16337113_laomadong_lab7-c++" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="idastar" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Course" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="astar" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="idastar" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="16337113_laomadong_lab7_c__" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../knn" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learning\AI\experiment\16337113_laomadong_lab7-c++" />
+      <recent name="D:\learning\AI\experiment\16337113_laomadong_lab7-c++\cmake-build-debug" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\learning\AI\experiment\16337113_laomadong_lab7-c++\code\astar" />
+      <recent name="D:\learning\AI\experiment\16337113_laomadong_lab7-c++\code" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Unknown.Build All1621344678">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="astar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../data/puzzle2.txt" PASS_PARENT_ENVS_2="true" PROJECT_NAME="16337113_laomadong_lab7_c__" TARGET_NAME="astar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="16337113_laomadong_lab7_c__" RUN_TARGET_NAME="astar">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="idastar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../data/puzzle2.txt" PASS_PARENT_ENVS_2="true" PROJECT_NAME="16337113_laomadong_lab7_c__" TARGET_NAME="idastar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="16337113_laomadong_lab7_c__" RUN_TARGET_NAME="idastar">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1bc86a9-ede3-441e-aa63-47164b497661" name="Default Changelist" comment="" />
+      <created>1541563035948</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541563035948</updated>
+      <workItem from="1541563037892" duration="367000" />
+      <workItem from="1541593631038" duration="447000" />
+      <workItem from="1541594603900" duration="644000" />
+      <workItem from="1541642786525" duration="8000" />
+      <workItem from="1541723697420" duration="6474000" />
+      <workItem from="1541757781354" duration="2433000" />
+      <workItem from="1541760278225" duration="17967000" />
+      <workItem from="1541816266972" duration="6235000" />
+      <workItem from="1541822691473" duration="19522000" />
+      <workItem from="1542004628144" duration="1390000" />
+      <workItem from="1542022676408" duration="2636000" />
+      <workItem from="1542028359658" duration="9043000" />
+      <workItem from="1542037461222" duration="10385000" />
+      <workItem from="1542078728856" duration="4209000" />
+      <workItem from="1542089204262" duration="253000" />
+      <workItem from="1542106724034" duration="5170000" />
+      <workItem from="1542115954528" duration="2100000" />
+    </task>
+    <task id="LOCAL-00001" summary="拼图压缩为__int64">
+      <created>1541774876808</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541774876808</updated>
+    </task>
+    <task id="LOCAL-00002" summary="拼图压缩为__int64">
+      <created>1541774928885</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541774928885</updated>
+    </task>
+    <task id="LOCAL-00003" summary="调整代码结构">
+      <created>1541822286604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541822286604</updated>
+    </task>
+    <task id="LOCAL-00004" summary="调整代码结构">
+      <created>1541822563068</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541822563068</updated>
+    </task>
+    <task id="LOCAL-00005" summary="调整代码结构">
+      <created>1541822761135</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541822761135</updated>
+    </task>
+    <task id="LOCAL-00006" summary="调整代码结构">
+      <created>1541823303588</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541823303588</updated>
+    </task>
+    <task id="LOCAL-00007" summary="调整代码结构">
+      <created>1541823938783</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541823938783</updated>
+    </task>
+    <task id="LOCAL-00008" summary="调整代码结构">
+      <created>1541824025301</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541824025301</updated>
+    </task>
+    <task id="LOCAL-00009" summary="调整代码结构">
+      <created>1541824061599</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541824061599</updated>
+    </task>
+    <task id="LOCAL-00010" summary="调整代码结构">
+      <created>1541841599608</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541841599608</updated>
+    </task>
+    <task id="LOCAL-00011" summary="调整代码结构">
+      <created>1541842166969</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1541842166969</updated>
+    </task>
+    <task id="LOCAL-00012" summary="IDA*">
+      <created>1541853640988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541853640988</updated>
+    </task>
+    <task id="LOCAL-00013" summary="IDA*-linear conflict heuristic">
+      <created>1542089285242</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1542089285242</updated>
+    </task>
+    <task id="LOCAL-00014" summary="IDA*-linear conflict heuristic">
+      <created>1542089345967</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542089345967</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="89283000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14657739" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2594417" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39901477" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32512316" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32840723" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="拼图压缩为__int64" />
+    <MESSAGE value="调整代码结构" />
+    <MESSAGE value="IDA*" />
+    <MESSAGE value="IDA*-linear conflict heuristic" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDA*-linear conflict heuristic" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/puzzle4.txt" />
+    <entry file="file://$PROJECT_DIR$/data/puzzle3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dst.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/in.txt" />
+    <entry file="file://$PROJECT_DIR$/test.cpp" />
+    <entry file="file://$PROJECT_DIR$/15puzzle_wd.c" />
+    <entry file="file://$PROJECT_DIR$/idastar.h" />
+    <entry file="file://D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_function.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="385" column="19" selection-start-line="385" selection-start-column="19" selection-end-line="385" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vector_io.hpp" />
+    <entry file="file://D:/Program Files/mingw64/x86_64-w64-mingw32/include/crtdefs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/mingw64/x86_64-w64-mingw32/include/_mingw.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="240" selection-start-line="240" selection-end-line="240" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dst.txt" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/puzzle1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/node.hpp" />
+    <entry file="file://$PROJECT_DIR$/code/idastar/node.hpp" />
+    <entry file="file://$PROJECT_DIR$/data/puzzle4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Program Files/mingw64/x86_64-w64-mingw32/include/stdint.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/puzzle2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/idastar/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/puzzle.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/heuristic.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/astar/astar.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/astar/node.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/idastar/idastar.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/astar/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
