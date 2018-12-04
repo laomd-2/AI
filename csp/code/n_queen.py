@@ -1,4 +1,5 @@
-from point import Point
+import numpy as np
+
 
 __all__ = ['n_queens_fc', 'n_queens_backtracking']
 
@@ -7,33 +8,32 @@ def _is_valid(p, n):
     return 0 <= p[0] < n and 0 <= p[1] < n
 
 
-def csp(board, point):
-    point = Point(point)
-    n = board.shape[1]
-    for d in (-1, 0, 1):
-        direction = (-1, d)
-        p = point + direction
-        while _is_valid(p, n):
-            if board[p] == 1:
-                return False
-            p = p + direction
+def csp(columns, k):
+    for i in range(k):
+        if columns[i] == columns[k] or k - i == abs(columns[i] - columns[k]):
+            return False
     return True
 
 
-def n_queens_backtracking(chess_board, row=0):
-    n = chess_board.shape[1]
+def _n_queens_backtracking(chess_board, columns, row):
+    n = len(columns)
     if row == n:
-        # print(board)
-        # print()
+        # print(chess_board)
         return 1
     else:
         cnt = 0
         for i in range(n):
-            if csp(chess_board, (row, i)):
+            columns[row] = i
+            if csp(columns, row):
                 chess_board[row][i] = 1
-                cnt += n_queens_backtracking(chess_board, row + 1)
+                cnt += _n_queens_backtracking(chess_board, columns, row + 1)
                 chess_board[row][i] = 0
         return cnt
+
+
+def n_queens_backtracking(chess_board):
+    n = chess_board.shape[1]
+    return _n_queens_backtracking(chess_board, [0] * n, 0)
 
 
 def _n_queens_fc(board, index, cnt, domains):
