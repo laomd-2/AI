@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c1ab77a-0f7e-4ad7-a51b-1a3c5f1ced67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/burglary-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/monty-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/burglary.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monty.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bayesian.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bayesian.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/burglary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/burglary.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../non-informed-search/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../non-informed-search/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../non-informed-search/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../non-informed-search/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -44,25 +37,26 @@
     <session id="1733190633">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="py" value="1272" />
+          <entry key="py" value="1301" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="1272" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="Python" value="1301" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -85,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/burglary.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="3" />
+              <selected id="5" />
             </state>
           </provider>
         </entry>
@@ -134,6 +128,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,11 +140,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../csp" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -164,7 +158,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.burglary">
+  <component name="RunManager" selected="Jupyter Notebook.bayesian">
+    <configuration name="bayesian" type="JupiterNotebook" factoryName="Jupyter Notebook">
+      <module name="bayesian" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="additionalOptions" value="" />
+      <option name="ipnbHost" value="127.0.0.1" />
+      <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
     <configuration name="burglary" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bayesian" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -208,6 +219,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Jupyter Notebook.bayesian" />
       <item itemvalue="Python.monty" />
       <item itemvalue="Python.burglary" />
     </list>
@@ -228,13 +240,13 @@
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32840723" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32840723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32840723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -242,6 +254,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="贝叶斯网络" />
+    <option name="LAST_COMMIT_MESSAGE" value="贝叶斯网络" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharmEdu2018.2/system/python_stubs/830134243/pomegranate/base.py">
@@ -258,10 +274,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monty.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" selection-start-line="42" selection-end-line="47" />
+    <entry file="file://$PROJECT_DIR$/monty.py" />
+    <entry file="file://$PROJECT_DIR$/burglary.py" />
+    <entry file="file://$PROJECT_DIR$/burglary.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="5" />
         </state>
       </provider>
     </entry>
@@ -269,20 +287,6 @@
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/burglary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/burglary.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="3" />
         </state>
       </provider>
     </entry>

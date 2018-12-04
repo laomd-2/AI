@@ -20,8 +20,8 @@ def csp(board, point):
     return True
 
 
-def n_queens_backtracking(board, row=0):
-    n = board.shape[1]
+def n_queens_backtracking(chess_board, row=0):
+    n = chess_board.shape[1]
     if row == n:
         # print(board)
         # print()
@@ -29,10 +29,10 @@ def n_queens_backtracking(board, row=0):
     else:
         cnt = 0
         for i in range(n):
-            if csp(board, (row, i)):
-                board[row][i] = 1
-                cnt += n_queens_backtracking(board, row + 1)
-                board[row][i] = 0
+            if csp(chess_board, (row, i)):
+                chess_board[row][i] = 1
+                cnt += n_queens_backtracking(chess_board, row + 1)
+                chess_board[row][i] = 0
         return cnt
 
 
