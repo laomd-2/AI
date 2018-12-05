@@ -19,15 +19,16 @@ def last_index(l, v):
 
 class MyBayesianNetwork(BayesianNetwork):
     
-    def probability(self, *args, **kargs):
+    def sum_probability(self, values):
         try:
-            values = list(args[0])
             i = last_index(values, None)
             p = 0
+            tmp = values[i]
             for v in self.states[i].distribution.keys():
                 values[i] = v
-                p += self.probability(values, *args[1:], **kargs)
+                p += self.sum_probability(values)
+            values[i] = tmp
             return p
         except ValueError:
-            return super(BayesianNetwork, self).probability(*args, **kargs)
+            return self.probability(values)
         
