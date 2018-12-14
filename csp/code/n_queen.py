@@ -36,6 +36,18 @@ def n_queens_backtracking(chess_board):
     return _n_queens_backtracking(chess_board, [0] * n, 0)
 
 
+def csp_update(domain, x, queen_id, other_queen):
+    restore = set()
+    if x in domain:
+        restore.add(x)
+        domain.remove(x)
+    for j in domain.copy():
+        if abs(j - x) == abs(other_queen - queen_id):
+            restore.add(j)
+            domain.remove(j)
+    return restore
+
+
 def _n_queens_fc(board, index, cnt, domains):
     n = board.shape[1]
     if index >= n:
@@ -50,14 +62,7 @@ def _n_queens_fc(board, index, cnt, domains):
             min_remain_i = None
             for i in range(index + 1, n):
                 other_queen, domain = domains[i]
-                restore.append(set())
-                if x in domain:
-                    restore[-1].add(x)
-                    domain.remove(x)
-                for j in domain.copy():
-                    if abs(j - x) == abs(other_queen - queen_id):
-                        restore[-1].add(j)
-                        domain.remove(j)
+                restore.append(csp_update(domain, x, queen_id, other_queen))
                 length = len(domain)
                 if length < min_remain:
                     min_remain = length

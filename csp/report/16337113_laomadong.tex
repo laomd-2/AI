@@ -338,25 +338,27 @@ for j, d in enumerate(restore):
 \end{enumerate}
 
 \section{实验结果及分析}
-实验中测试了10皇后和12皇后问题，统计找出问题的所有解的运行时间，如\tabref{tab:time}。
+实验中测试了10皇后和12皇后问题，使用time函数统计找出问题的所有解的运行时间，Pycharm的Profile工具
+统计函数调用次数，结果如\tabref{tab:fc-bt}。
 10皇后问题解的个数为724个，使用backtracking算法时，需要1.33秒找出所有解，而使用forward-checking
 只需0.23秒，只有backtracking时间的$\frac{1}{6}$左右；12皇后问题解的个数为14200，forward-checking
-算法只有backtracking算法的$\frac{3.70}{46.76}\approx \frac{1}{13}$，更突显了forward-checking算法
-的优越性。
+算法只有backtracking算法的$\frac{3.70}{46.76}\approx \frac{1}{13}$，函数调用次数只有更突显了forward-checking算法
+的优越性。forward-checking的函数调用次数只有backtracking的函数调用也只有$\frac{1}{2}$左右。
 \begin{table}[!htbp]
   \centering
   \begin{tabular}{cccc}
     \toprule  
-    n& 解个数& backtracking时间/s& forward-checking时间/s\\
+    n& 解个数& 时间/s（fc|bt） &Call Count（fc|bt）\\
     \midrule
-    8& 92& 0.07& 0.08\\
-    10& 724& 1.33& 0.23\\
-    12& 14200& 46.76& 3.70\\
+    8& 92& 0.08 | 0.07 &1341 | 2057\\
+    10& 724& 0.23 | 1.33 &19587 | 35539\\
+    12& 14200& 3.70 | 46.76& 413487 | 856189\\
     \bottomrule 
   \end{tabular}
-  \caption{算法运行时间}
-  \label{tab:time}
+  \caption{fc与bt结果对比}
+  \label{tab:fc-bt}
 \end{table}
+
 \par 从定性的角度分析，backtracking算法每次递归都认为皇后的值域是[0, N)，并且对每个值都运行一遍约束检测；
 而forward-checking算法每个皇后的值域最多有N个，并且由于约束传播更新了值域，会发生很多的剪枝，递归次数和层数都
 比backtracking少，自然就能在比backtracking短的时间内找出所有结果。
