@@ -4,19 +4,14 @@ from gambling.zero_sum import ZeroSum
 
 class NegamaxAlphaBeta(ZeroSum):
 
-    def __init__(self, board, evaluation, first=True):
-        super(NegamaxAlphaBeta, self).__init__(board, evaluation, first)
-        self._color = 1 if first else -1
+    def __init__(self, board, char, evaluation):
+        super(NegamaxAlphaBeta, self).__init__(board, char, evaluation)
         self._table = dict()
 
-    def _decide(self, remain_depth):
-        return self.search_internal(remain_depth, -self.INF, self.INF, self._color)[1]
-
-    def search_internal(self, remain_depth, alpha, beta, *args):
-        color = args[0]
+    def _search_internal(self, remain_depth, char, opp_char, alpha, beta, **kwargs):
+        color = kwargs['color']
         best_move = None
         best_score = -self.INF
-        char, opp_char = self.get_player_char(color == 1)
         if remain_depth == 0:
             best_score = color * self._evaluation(self._board)
         else:
@@ -24,7 +19,7 @@ class NegamaxAlphaBeta(ZeroSum):
             if moves_list:
                 for move in moves_list:
                     all_reverse = self._board.apply_move(move, char, False)
-                    chosen_score = self.search_internal(remain_depth - 1, -beta, -alpha, -color)[0]
+                    chosen_score = self._search_internal(remain_depth - 1, opp_char, char, -beta, -alpha, color=-color)[0]
                     for p in all_reverse:
                         self._board[p] = opp_char
                     if all_reverse:

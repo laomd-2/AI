@@ -2,16 +2,17 @@ from point import where
 
 
 class Board:
-    FIRST = 'O'
-    SECOND = 'X'
-    BLANK = '*'
+    FIRST = 1
+    SECOND = -1
+    BLANK = 0
 
     def __init__(self, board):
         self.__board = board
         self.__now = False
 
     def __str__(self):
-        char = (self.FIRST + self.SECOND)[int(self.__now)]
+        char = (self.FIRST, self.SECOND)[int(self.__now)]
+        show = 'X*O'
         moves = self.generate_moves(char)
         str_type = ''
         n = self.__board.shape[0]
@@ -21,12 +22,15 @@ class Board:
                 if pos in moves:
                     str_type += '+ '
                 else:
-                    str_type += self.__board[pos] + ' '
+                    str_type += show[self.__board[pos] + 1] + ' '
             str_type += '\n'
         return str_type.rstrip('\n')
 
     def __setitem__(self, key, value):
         self.__board[key] = value
+
+    def __getitem__(self, item):
+        return self.__board[item]
 
     def _is_valid(self, pos):
         i, j = pos
@@ -91,10 +95,8 @@ class Board:
             self.__board[move] = char
         return all_reverse
 
-    def score(self):
-        max_chesses = where(self.__board == self.FIRST)
-        min_chesses = where(self.__board == self.SECOND)
-        return len(max_chesses), len(min_chesses)
+    def getState(self):
+        return self.__board
 
     def game_over(self):
         return not self.generate_moves(self.FIRST) and not self.generate_moves(self.SECOND)

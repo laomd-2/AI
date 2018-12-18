@@ -4,21 +4,17 @@ from gambling.zero_sum import ZeroSum
 
 class MinimaxAlphaBeta(ZeroSum):
 
-    def __init__(self, board, evaluation, first=True):
-        super(MinimaxAlphaBeta, self).__init__(board, evaluation, first)
-        self._is_max = first
+    def __init__(self, board, char, evaluation):
+        super(MinimaxAlphaBeta, self).__init__(board, char, evaluation)
         self._table = dict()
 
-    def _decide(self, remain_depth):
-        return self.search_internal(remain_depth, -self.INF, self.INF, self._is_max)[1]
-
-    def search_internal(self, remain_depth, alpha, beta, *args):
-        ismax = args[0]
+    def _search_internal(self, remain_depth, alpha, beta, **kwargs):
+        is_even = kwargs['is_even']
         best_move = None
         best_score = -self.INF
-        if not ismax:
+        if not is_even:
             best_score = self.INF
-        char, opp_char = self.get_player_char(ismax)
+        char, opp_char = self.get_player_char(is_even)
         if remain_depth == 0:
             best_score = self._evaluation(self._board)
         else:
@@ -26,12 +22,12 @@ class MinimaxAlphaBeta(ZeroSum):
             if moves_list:
                 for move in moves_list:
                     all_reverse = self._board.apply_move(move, char, False)
-                    chosen_score = self.search_internal(remain_depth - 1, alpha, beta, not ismax)[0]
+                    chosen_score = self._search_internal(remain_depth - 1, alpha, beta, is_even=not is_even)[0]
                     for p in all_reverse:
                         self._board[p] = opp_char
                     if all_reverse:
                         self._board[move] = Board.BLANK
-                    if ismax:
+                    if is_even:
                         if best_score < chosen_score:
                             best_score = chosen_score
                             best_move = move
