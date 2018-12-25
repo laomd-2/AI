@@ -40,6 +40,8 @@ class MonteCarloTreeSearchNode:
         return len(self.untried_actions) == 0
 
     def best_child(self, c_param=1.4):
+        if not self.children:
+            return None
         choices_weights = [
             (c.q / c.n) + c_param * np.sqrt((2 * np.log(self.n) / c.n))
             for c in self.children
@@ -75,7 +77,7 @@ class TwoPlayersGameMonteCarloTreeSearchNode(MonteCarloTreeSearchNode):
         return self._number_of_visits
 
     def expand(self):
-        action = self.untried_actions.pop()
+        action = np.random.choice(self.untried_actions)
         next_state = self.state.move(action)
         child_node = TwoPlayersGameMonteCarloTreeSearchNode(next_state, action, parent=self)
         self.children.append(child_node)
@@ -88,8 +90,11 @@ class TwoPlayersGameMonteCarloTreeSearchNode(MonteCarloTreeSearchNode):
         current_rollout_state = self.state
         while not current_rollout_state.is_game_over():
             possible_moves = current_rollout_state.get_legal_actions()
-            action = self.rollout_policy(possible_moves)
-            current_rollout_state = current_rollout_state.move(action)
+            if possible_moves:
+                action = self.rollout_policy(possible_moves)
+                current_rollout_state = current_rollout_state.move(action)
+            else:
+                current_rollout_state = current_rollout_state.pass_()
         return current_rollout_state.game_result
 
     def backpropagate(self, result):

@@ -3,19 +3,10 @@ from games.common import TwoPlayersGameState, Action
 
 
 class TicTacToeMove(Action):
-
-    def __init__(self, x_coordinate, y_coordinate, value):
-        self.x_coordinate = x_coordinate
-        self.y_coordinate = y_coordinate
-        self.value = value
-
-    def __repr__(self):
-        return "x:" + str(self.x_coordinate) + " y:" + str(self.y_coordinate) + " v:" + str(self.value)
+    pass
 
 
 class TicTacToeGameState(TwoPlayersGameState):
-    x = 1
-    o = -1
 
     def __init__(self, state, next_to_move=1):
         super(TicTacToeGameState, self).__init__(state, next_to_move)
@@ -49,7 +40,7 @@ class TicTacToeGameState(TwoPlayersGameState):
 
     def is_move_legal(self, move):
         # check if correct player moves
-        if move.value != self.next_to_move:
+        if move.player != self.next_to_move:
             return False
 
         # check if inside the board
@@ -70,12 +61,9 @@ class TicTacToeGameState(TwoPlayersGameState):
             raise ValueError("move " + move + " on board " + self.state + " is not legal")
         new_board = np.copy(self.state)
         new_board[move.x_coordinate, move.y_coordinate] = move.value
-        next_to_move = TicTacToeGameState.o if self.next_to_move == TicTacToeGameState.x else TicTacToeGameState.x
+        next_to_move = self.get_next_move()
         return TicTacToeGameState(new_board, next_to_move)
 
     def get_legal_actions(self):
         indices = np.where(self.state == 0)
         return [TicTacToeMove(coords[0], coords[1], self.next_to_move) for coords in list(zip(indices[0], indices[1]))]
-
-    def __str__(self):
-        return str(self.state)

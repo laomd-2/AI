@@ -20,5 +20,9 @@ class MonteCarloTreeSearch:
             if not current_node.is_fully_expanded():
                 return current_node.expand()
             else:
-                current_node = current_node.best_child()
+                tmp = current_node.best_child()
+                if tmp:
+                    current_node = tmp
+                else:
+                    break
         return current_node
