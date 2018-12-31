@@ -30,7 +30,6 @@ class OthelloGameState(TwoPlayersGameState):
             str_type += '\n'
         return str_type.rstrip('\n')
 
-    @property
     def game_result(self):
         return np.sum(self.state)
 
