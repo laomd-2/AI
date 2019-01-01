@@ -23,4 +23,4 @@ class MonteCarloTreeSearch:
             c = leaf.expansion()
             game_res = c.simulation()
             c.back_propagation(game_res)
-        return self.root.best_child(c=0)
+        return self.root.best_child(c=0).action

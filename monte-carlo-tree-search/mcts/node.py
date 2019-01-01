@@ -59,6 +59,7 @@ class Node:
         return list(self.__children.values())
 
     def best_child(self, c=1.414):
+        children = self.children
         score = [(child.win / child.visited + c * math.sqrt(math.log(self.visited) / child.visited))
-                 for child in self.children]
-        return self.children[np.argmax(score)]
+                 for child in children]
+        return children[np.argmax(score)]

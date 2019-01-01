@@ -5,12 +5,15 @@ class TwoPlayersGameState:
     x = 1
     o = -1
 
-    def __init__(self, state, next_to_move):
+    def __init__(self, state: np.ndarray, next_to_move):
         self.state = state
         self.next_to_move = next_to_move
 
     def __str__(self):
         return str(self.state)
+
+    def __hash__(self):
+        return hash(self.state.tobytes())
 
     def game_result(self):
         raise NotImplemented("Implement game_result function")
