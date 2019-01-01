@@ -9,7 +9,7 @@ class OthelloAction(Action):
 class OthelloGameState(TwoPlayersGameState):
     BLANK = 0
 
-    def __init__(self, state, next_to_move=1):
+    def __init__(self, state, next_to_move=TwoPlayersGameState.x):
         if len(state.shape) != 2 or state.shape[0] != state.shape[1]:
             raise ValueError("Please play on 2D square board")
         super(OthelloGameState, self).__init__(state, next_to_move)

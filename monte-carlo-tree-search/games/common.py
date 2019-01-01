@@ -49,6 +49,9 @@ class Action:
     def __iter__(self):
         return iter((self.x_coordinate, self.y_coordinate, self.player))
 
+    def __hash__(self):
+        return int(self.player * (self.x_coordinate * 8 + self.y_coordinate))
+
 
 def where(condition):
     res = np.where(condition)
